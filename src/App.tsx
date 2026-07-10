@@ -90,35 +90,35 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-// Fotos para o carrossel da galeria (coloque suas fotos aqui)
+// Fotos para o carrossel da galeria - AGORA USANDO IMAGENS LOCAIS
 const galleryItems: GalleryItem[] = [
   {
-    src: "https://images.pexels.com/photos/34940811/pexels-photo-34940811.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    src: "/images/galeria/foto1.jpg",
     alt: "Vista aérea de lavouras",
     title: "Monitoramento com Drone",
   },
   {
-    src: "https://images.pexels.com/photos/26256446/pexels-photo-26256446.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    src: "/images/galeria/foto2.jpg",
     alt: "Colheitadeira em campo",
     title: "Colheita de Alta Performance",
   },
   {
-    src: "https://images.pexels.com/photos/33787003/pexels-photo-33787003.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    src: "/images/galeria/foto3.jpg",
     alt: "Máquinas modernas",
     title: "Tecnologia no Campo",
   },
   {
-    src: "https://images.pexels.com/photos/34182414/pexels-photo-34182414.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    src: "/images/galeria/foto4.jpg",
     alt: "Drones agrícolas",
     title: "Agricultura de Precisão",
   },
   {
-    src: "https://images.pexels.com/photos/9276463/pexels-photo-9276463.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    src: "/images/galeria/foto5.jpg",
     alt: "Tratores operando",
     title: "Plantio Estratégico",
   },
   {
-    src: "https://images.pexels.com/photos/31953698/pexels-photo-31953698.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    src: "/images/galeria/foto6.jpg",
     alt: "Gestão de talhões",
     title: "Gestão Patrimonial",
   },
@@ -469,7 +469,7 @@ export default function App() {
             <img 
               src="/logo.png" 
               alt="TECNOAGRO" 
-              className="h-16 w-auto object-contain" // Logo maior
+              className="h-16 w-auto object-contain"
             />
           </a>
 
@@ -507,7 +507,10 @@ export default function App() {
                 )}
               </div>
             ))}
-            <ArrowButton label="Falar com Especialista" href={whatsappUrl} tone="gold" target="_blank" />
+            <div className="flex items-center gap-3">
+              <ArrowButton label="Diagnóstico" href="#contato" tone="gold" />
+              <ArrowButton label="Especialista" href={whatsappUrl} tone="green" target="_blank" />
+            </div>
           </nav>
 
           <button
@@ -557,13 +560,21 @@ export default function App() {
                     )}
                   </div>
                 ))}
-                <ArrowButton
-                  label="Falar com Especialista"
-                  href={whatsappUrl}
-                  tone="gold"
-                  onClick={() => setMenuOpen(false)}
-                  target="_blank"
-                />
+                <div className="flex flex-col gap-3">
+                  <ArrowButton
+                    label="Diagnóstico"
+                    href="#contato"
+                    tone="gold"
+                    onClick={() => setMenuOpen(false)}
+                  />
+                  <ArrowButton
+                    label="Especialista"
+                    href={whatsappUrl}
+                    tone="green"
+                    onClick={() => setMenuOpen(false)}
+                    target="_blank"
+                  />
+                </div>
               </div>
             </motion.div>
           ) : null}
@@ -657,8 +668,8 @@ export default function App() {
           <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0f3520] to-transparent" />
         </section>
 
-        {/* Seção de Mensagens de Valor com Neuro-linguística (substituindo estatísticas) */}
-        <section className="border-y border-white/8 bg-white/[0.03] py-16">
+        {/* Seção de Mensagens de Valor - CORRIGIDA (fundo escuro) */}
+        <section className="border-y border-white/8 bg-[#0f3520] py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-xs tracking-[0.36em] text-[#C9A227] uppercase">O que você conquista ao escolher a excelência</p>
@@ -941,6 +952,10 @@ export default function App() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 1.05 }}
                     transition={{ duration: 0.8 }}
+                    onError={(e) => {
+                      // Fallback para imagem placeholder se a imagem local não existir
+                      e.currentTarget.src = "https://images.pexels.com/photos/34940811/pexels-photo-34940811.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200";
+                    }}
                   />
                 </AnimatePresence>
                 
@@ -1173,7 +1188,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* Contato com Neuro-linguística - sem mapa */}
+        {/* Contato com Neuro-linguística - sem mapa e sem SMTP Ready */}
         <section id="contato" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
@@ -1260,16 +1275,11 @@ export default function App() {
                 </div>
               </GlassPanel>
 
-              {/* Lado direito - Formulário */}
+              {/* Lado direito - Formulário (sem SMTP Ready) */}
               <GlassPanel className="p-6 sm:p-8 lg:p-10">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-sm tracking-[0.28em] text-[#C9A227] uppercase">Formulário Premium</p>
-                    <h3 className="mt-3 font-display text-3xl text-white">Solicitar Diagnóstico</h3>
-                  </div>
-                  <div className="hidden rounded-full border border-[#C9A227]/20 bg-[#C9A227]/10 px-4 py-2 text-xs tracking-[0.26em] text-[#C9A227] uppercase sm:block">
-                    SMTP Ready
-                  </div>
+                <div>
+                  <p className="text-sm tracking-[0.28em] text-[#C9A227] uppercase">Formulário</p>
+                  <h3 className="mt-3 font-display text-3xl text-white">Solicitar Diagnóstico</h3>
                 </div>
 
                 <form className="mt-8 grid gap-4" onSubmit={submitContact}>
@@ -1311,13 +1321,12 @@ export default function App() {
                       tone="gold"
                       type="submit"
                     />
-                    <p className={cn("text-sm", formStatus === "success" ? "text-[#5CA66B]" : formStatus === "error" ? "text-[#C9A227]" : "text-white/55")}>
-                      {formStatus === "success"
-                        ? "✓ Mensagem enviada com sucesso!"
-                        : formStatus === "error"
-                          ? "Redirecionando para WhatsApp..."
-                          : "Respostas rápidas via WhatsApp ou SMTP"}
-                    </p>
+                    {formStatus === "success" && (
+                      <p className="text-sm text-[#5CA66B]">✓ Mensagem enviada com sucesso!</p>
+                    )}
+                    {formStatus === "error" && (
+                      <p className="text-sm text-[#C9A227]">Redirecionando para WhatsApp...</p>
+                    )}
                   </div>
                 </form>
 
@@ -1333,15 +1342,15 @@ export default function App() {
         </section>
       </main>
 
-      {/* Rodapé Premium com logo maior */}
-      <footer className="border-t border-white/10 bg-[#0f3520] py-14">
+      {/* Rodapé com fundo combinando com a logo verde */}
+      <footer className="border-t border-white/10 py-14" style={{ background: '#0f3520' }}>
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1fr_0.8fr] lg:px-8">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <img 
-                src="/logo.png" 
+                src="/logo-verde.png" 
                 alt="TECNOAGRO" 
-                className="h-16 w-auto object-contain" // Logo maior no rodapé
+                className="h-20 w-auto object-contain"
               />
             </div>
             <p className="max-w-sm text-sm leading-7 text-white/68">
