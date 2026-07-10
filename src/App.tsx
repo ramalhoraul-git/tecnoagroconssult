@@ -8,13 +8,6 @@ type SectionLink = {
   submenu?: { id: string; label: string }[];
 };
 
-type CounterItem = {
-  value: number;
-  prefix?: string;
-  suffix?: string;
-  label: string;
-};
-
 type ServiceGroup = {
   title: string;
   items: string[];
@@ -24,7 +17,6 @@ type GalleryItem = {
   src: string;
   alt: string;
   title: string;
-  size: string;
 };
 
 type Testimonial = {
@@ -34,7 +26,8 @@ type Testimonial = {
   photo: string;
 };
 
-const whatsappNumber = "5511999999999";
+// WhatsApp correto
+const whatsappNumber = "5561996481878";
 const whatsappMessage = "Olá, gostaria de agendar um diagnóstico da minha propriedade.";
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -63,11 +56,72 @@ const navLinks: SectionLink[] = [
   { id: "contato", label: "Contato" },
 ];
 
-const counters: CounterItem[] = [
-  { value: 15000, prefix: "+", label: "ha monitorados" },
-  { value: 98, prefix: "+", suffix: "%", label: "Satisfação" },
-  { value: 30, prefix: "+", suffix: "%", label: "Ganho médio de eficiência" },
-  { value: 500, prefix: "+", label: "Propriedades atendidas" },
+// Mensagens de valor com neuro-linguística
+const valueMessages = [
+  { 
+    icon: "🎯", 
+    title: "Decisões que criam vantagem competitiva",
+    description: "Enquanto outros reagem ao mercado, você antecipa. Cada hectare se torna uma fonte de vantagem que seus concorrentes não terão."
+  },
+  { 
+    icon: "⚡", 
+    title: "Resultados que falam por si mesmos",
+    description: "A excelência não precisa de apresentação. Ela se revela na colheita, nos números e na valorização do seu patrimônio."
+  },
+  { 
+    icon: "🌱", 
+    title: "Legado que transcende gerações",
+    description: "O que você constrói hoje é a base para as próximas safras. E para os próximos 30 anos da sua família no campo."
+  },
+  { 
+    icon: "🔮", 
+    title: "Visão que enxerga além da safra atual",
+    description: "O produtor que enxerga o futuro não espera. Ele constrói. E nós estamos aqui para transformar essa visão em realidade."
+  },
+];
+
+// Depoimento real
+const testimonials: Testimonial[] = [
+  {
+    quote: "Fechamos parceria em 2025 e já ganhamos na entre safra irrigada média de 6 sacas a mais do que o ano anterior. A TECNOAGRO transformou nossa forma de enxergar a produção.",
+    author: "Rafael Shimitashu",
+    role: "Produtor rural, Cristalina/GO",
+    photo: "https://images.pexels.com/photos/5484072/pexels-photo-5484072.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=900",
+  },
+];
+
+// Fotos para o carrossel da galeria (coloque suas fotos aqui)
+const galleryItems: GalleryItem[] = [
+  {
+    src: "https://images.pexels.com/photos/34940811/pexels-photo-34940811.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    alt: "Vista aérea de lavouras",
+    title: "Monitoramento com Drone",
+  },
+  {
+    src: "https://images.pexels.com/photos/26256446/pexels-photo-26256446.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    alt: "Colheitadeira em campo",
+    title: "Colheita de Alta Performance",
+  },
+  {
+    src: "https://images.pexels.com/photos/33787003/pexels-photo-33787003.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    alt: "Máquinas modernas",
+    title: "Tecnologia no Campo",
+  },
+  {
+    src: "https://images.pexels.com/photos/34182414/pexels-photo-34182414.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    alt: "Drones agrícolas",
+    title: "Agricultura de Precisão",
+  },
+  {
+    src: "https://images.pexels.com/photos/9276463/pexels-photo-9276463.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    alt: "Tratores operando",
+    title: "Plantio Estratégico",
+  },
+  {
+    src: "https://images.pexels.com/photos/31953698/pexels-photo-31953698.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    alt: "Gestão de talhões",
+    title: "Gestão Patrimonial",
+  },
 ];
 
 const strategicPillars = [
@@ -151,69 +205,6 @@ const serviceGroups: ServiceGroup[] = [
   },
 ];
 
-const galleryItems: GalleryItem[] = [
-  {
-    src: "https://images.pexels.com/photos/34940811/pexels-photo-34940811.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=1600",
-    alt: "Vista aérea de lavouras verdes em mosaico.",
-    title: "Drone sobre lavouras",
-    size: "tall",
-  },
-  {
-    src: "https://images.pexels.com/photos/26256446/pexels-photo-26256446.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1400",
-    alt: "Colheitadeira trabalhando em campo de grãos.",
-    title: "Colheita em escala",
-    size: "wide",
-  },
-  {
-    src: "https://images.pexels.com/photos/33787003/pexels-photo-33787003.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1400",
-    alt: "Máquinas modernas colhendo em área extensa.",
-    title: "Máquinas modernas",
-    size: "wide",
-  },
-  {
-    src: "https://images.pexels.com/photos/34182414/pexels-photo-34182414.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=1600",
-    alt: "Drones agrícolas em operação para monitoramento.",
-    title: "Mapas e monitoramento",
-    size: "tall",
-  },
-  {
-    src: "https://images.pexels.com/photos/9276463/pexels-photo-9276463.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1400",
-    alt: "Tratores operando em uma grande área agrícola.",
-    title: "Plantio e preparo",
-    size: "wide",
-  },
-  {
-    src: "https://images.pexels.com/photos/31953698/pexels-photo-31953698.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=1600",
-    alt: "Vista aérea de um vinhedo com trator entre linhas.",
-    title: "Gestão de talhões",
-    size: "tall",
-  },
-];
-
-const testimonials: Testimonial[] = [
-  {
-    quote:
-      "Nossa produtividade aumentou muito depois da consultoria. A melhor decisão que tomamos foi trabalhar com a TECNOAGRO desde a regulagem do plantio até a colheita.",
-    author: "Rafael Shimitashu",
-    role: "Produtor rural de Cristalina, GO",
-    photo: "https://images.pexels.com/photos/5484072/pexels-photo-5484072.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=900",
-  },
-  {
-    quote:
-      "Fechamos parceria em 2025 e, já na entre safra irrigada, ganhamos cerca de 6 sacas a mais por hectare em relação ao ano anterior.",
-    author: "Rafael Shimitashu",
-    role: "Produtor rural de Cristalina, GO",
-    photo: "https://images.pexels.com/photos/5484072/pexels-photo-5484072.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=900",
-  },
-  {
-    quote:
-      "Abrimos a mente para novas tecnologias e ganhamos mais eficiência no plantio, menos custo e uma parceria que segue para os próximos anos.",
-    author: "Rafael Shimitashu",
-    role: "Produtor rural de Cristalina, GO",
-    photo: "https://images.pexels.com/photos/5484072/pexels-photo-5484072.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=900",
-  },
-];
-
 const processSteps = [
   "Diagnóstico",
   "Planejamento",
@@ -227,69 +218,20 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-function useCountUp(target: number, active: boolean, duration = 1400) {
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    if (!active) {
-      return;
-    }
-
-    let raf = 0;
-    const start = performance.now();
-
-    const step = (time: number) => {
-      const progress = Math.min((time - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.round(target * eased));
-
-      if (progress < 1) {
-        raf = window.requestAnimationFrame(step);
-      }
-    };
-
-    raf = window.requestAnimationFrame(step);
-
-    return () => window.cancelAnimationFrame(raf);
-  }, [active, duration, target]);
-
-  return value;
-}
-
-function LogoMark({ className }: { className?: string }) {
-  return (
-    <svg aria-hidden="true" className={className} viewBox="0 0 56 56" fill="none">
-      <rect x="4" y="4" width="48" height="48" rx="16" stroke="currentColor" strokeWidth="1.5" opacity="0.35" />
-      <path
-        d="M16 35.5c4.2-11.8 12.2-17.4 24-17.4-4.5 6.2-8.8 9.8-13 10.8 4.4 1 7.7 3 9.8 6"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M24 18.5c1.8 2.2 3 4.7 3.6 7.4"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-      />
-      <circle cx="39.5" cy="37" r="2.5" fill="currentColor" opacity="0.9" />
-    </svg>
-  );
-}
-
 function ArrowButton({
   label,
   href,
   tone = "gold",
   onClick,
   type = "button",
+  target = "_self",
 }: {
   label: string;
   href?: string;
   tone?: "gold" | "green";
   onClick?: () => void;
   type?: "button" | "submit";
+  target?: "_self" | "_blank";
 }) {
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-[0.22em] transition duration-300 font-button",
@@ -300,7 +242,7 @@ function ArrowButton({
 
   if (href) {
     return (
-      <a className={classes} href={href} onClick={onClick}>
+      <a className={classes} href={href} onClick={onClick} target={target} rel={target === "_blank" ? "noopener noreferrer" : undefined}>
         <span>{label}</span>
         <span aria-hidden="true">→</span>
       </a>
@@ -352,32 +294,6 @@ function SectionHeading({
 
 function GlassPanel({ children, className }: { children: ReactNode; className?: string }) {
   return <div className={cn("glass-panel", className)}>{children}</div>;
-}
-
-function CountItem({ item }: { item: CounterItem }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(ref, { once: true, amount: 0.65 });
-  const value = useCountUp(item.value, inView);
-
-  return (
-    <motion.div
-      ref={ref}
-      className="glass-panel px-5 py-6 text-center md:px-8"
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.45 }}
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.35 }}
-    >
-      <div className="font-display text-4xl text-white md:text-5xl">
-        {item.prefix}
-        {new Intl.NumberFormat("pt-BR").format(value)}
-        {item.suffix}
-      </div>
-      <p className="mt-3 text-sm tracking-[0.16em] text-white/72 uppercase">{item.label}</p>
-    </motion.div>
-  );
 }
 
 function Icon({ name }: { name: string }) {
@@ -442,8 +358,8 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
-  const [selectedGallery, setSelectedGallery] = useState<number | null>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
   const [formState, setFormState] = useState({
     nome: "",
     telefone: "",
@@ -455,6 +371,7 @@ export default function App() {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const prefersReducedMotion = useReducedMotion();
   const heroRef = useRef<HTMLElement | null>(null);
+  const galleryIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const videoY = useTransform(scrollYProgress, [0, 1], [0, 90]);
@@ -468,15 +385,26 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Auto-play do carrossel da galeria
   useEffect(() => {
-    if (prefersReducedMotion) {
-      return;
-    }
+    if (prefersReducedMotion) return;
 
+    galleryIntervalRef.current = setInterval(() => {
+      setCurrentGalleryIndex((prev) => (prev + 1) % galleryItems.length);
+    }, 4000);
+
+    return () => {
+      if (galleryIntervalRef.current) {
+        clearInterval(galleryIntervalRef.current);
+      }
+    };
+  }, [prefersReducedMotion]);
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
     const timer = window.setInterval(() => {
       setActiveTestimonial((current) => (current + 1) % testimonials.length);
     }, 6000);
-
     return () => window.clearInterval(timer);
   }, [prefersReducedMotion]);
 
@@ -495,20 +423,16 @@ export default function App() {
     event.preventDefault();
     setFormStatus("sending");
 
-    const endpoint = (import.meta as ImportMeta & { env?: { VITE_CONTACT_ENDPOINT?: string } }).env?.VITE_CONTACT_ENDPOINT ?? "/contact.php";
     const payload = new FormData();
-
     Object.entries(formState).forEach(([key, value]) => payload.append(key, value));
 
     try {
-      const response = await fetch(endpoint, {
+      const response = await fetch("/contact.php", {
         method: "POST",
         body: payload,
       });
 
-      if (!response.ok) {
-        throw new Error("request-failed");
-      }
+      if (!response.ok) throw new Error("request-failed");
 
       setFormStatus("success");
       setFormState({ nome: "", telefone: "", cidade: "", email: "", area: "", mensagem: "" });
@@ -525,7 +449,6 @@ export default function App() {
           .filter(Boolean)
           .join("\n"),
       );
-
       window.open(`https://wa.me/${whatsappNumber}?text=${fallbackText}`, "_blank", "noopener,noreferrer");
     } finally {
       window.setTimeout(() => setFormStatus("idle"), 5000);
@@ -534,7 +457,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#F5F6F7] text-[#1F2933]">
-      {/* Header com fundo branco e logo visível */}
+      {/* Header com fundo branco e logo maior */}
       <header className={cn(
         "fixed inset-x-0 top-0 z-50 border-b transition-all duration-500",
         scrolled 
@@ -546,7 +469,7 @@ export default function App() {
             <img 
               src="/logo.png" 
               alt="TECNOAGRO" 
-              className="h-12 w-auto object-contain"
+              className="h-16 w-auto object-contain" // Logo maior
             />
           </a>
 
@@ -584,7 +507,7 @@ export default function App() {
                 )}
               </div>
             ))}
-            <ArrowButton label="Falar com Especialista" href={whatsappUrl} tone="gold" />
+            <ArrowButton label="Falar com Especialista" href={whatsappUrl} tone="gold" target="_blank" />
           </nav>
 
           <button
@@ -639,6 +562,7 @@ export default function App() {
                   href={whatsappUrl}
                   tone="gold"
                   onClick={() => setMenuOpen(false)}
+                  target="_blank"
                 />
               </div>
             </motion.div>
@@ -647,7 +571,7 @@ export default function App() {
       </header>
 
       <main>
-        {/* Hero Section - Fundo com vídeo e overlay verde escuro */}
+        {/* Hero Section */}
         <section ref={heroRef} id="home" className="relative flex min-h-[100svh] items-center overflow-hidden pt-20">
           <motion.div className="absolute inset-0" style={{ y: videoY, scale: videoScale }}>
             <video
@@ -725,7 +649,7 @@ export default function App() {
                 transition={{ delay: 0.4, duration: 0.85 }}
               >
                 <ArrowButton label="Solicitar Diagnóstico" href="#contato" tone="gold" />
-                <ArrowButton label="WhatsApp" href={whatsappUrl} tone="green" />
+                <ArrowButton label="WhatsApp" href={whatsappUrl} tone="green" target="_blank" />
               </motion.div>
             </div>
           </motion.div>
@@ -733,17 +657,48 @@ export default function App() {
           <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0f3520] to-transparent" />
         </section>
 
-        {/* Seção de Contadores */}
-        <section className="border-y border-white/8 bg-white/[0.03] py-10">
-          <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-8">
-            {counters.map((item) => (
-              <CountItem key={item.label} item={item} />
-            ))}
-          </div>
-          <div className="mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-sm tracking-[0.22em] text-white/50 uppercase">
-              Monitoramento, previsibilidade e eficiência para gerar resultados consistentes ano após ano.
-            </p>
+        {/* Seção de Mensagens de Valor com Neuro-linguística (substituindo estatísticas) */}
+        <section className="border-y border-white/8 bg-white/[0.03] py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <p className="text-xs tracking-[0.36em] text-[#C9A227] uppercase">O que você conquista ao escolher a excelência</p>
+              <h2 className="mt-4 font-display text-3xl text-white md:text-4xl">
+                A diferença entre <span className="text-[#C9A227]">produzir</span> e <span className="text-[#C9A227]">protagonizar</span>
+              </h2>
+              <p className="mt-3 text-white/60 max-w-2xl mx-auto">
+                Enquanto outros apenas colhem, você constrói um legado. Cada decisão se torna um ativo.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {valueMessages.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="glass-panel p-6 text-center transition hover:-translate-y-2 hover:border-[#C9A227]/30"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={fadeUp}
+                >
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <h3 className="font-display text-xl text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm text-white/65 leading-relaxed">{item.description}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Mensagem oculta com neuro-linguística */}
+            <motion.div 
+              className="mt-8 text-center"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+            >
+              <p className="text-[10px] tracking-[0.5em] text-[#C9A227]/30 uppercase select-none">
+                · O que você faria se soubesse que pode transformar sua propriedade em um patrimônio 3x mais valioso? ·
+              </p>
+            </motion.div>
           </div>
         </section>
 
@@ -964,45 +919,72 @@ export default function App() {
           </div>
         </section>
 
-        {/* Galeria */}
+        {/* Galeria Premium com Carrossel */}
         <section id="galeria" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Galeria Premium"
               title="O campo em escala cinematográfica."
-              description="Uma curadoria visual com drone, colheita, pulverização, plantio, máquinas e consultoria em movimento. Clique para ampliar."
+              description="Uma curadoria visual com drone, colheita, pulverização, plantio, máquinas e consultoria em movimento."
               center
             />
 
-            <div className="mt-16 columns-1 gap-4 space-y-4 md:columns-2 xl:columns-3">
-              {galleryItems.map((item, index) => (
-                <motion.button
-                  key={item.title}
-                  type="button"
-                  className={cn(
-                    "group relative block w-full overflow-hidden rounded-[28px] border border-white/10 bg-white/5 text-left backdrop-blur-xl",
-                    item.size === "tall" ? "aspect-[4/5]" : "aspect-[16/11]",
-                  )}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.3 }}
-                  variants={fadeUp}
-                  whileHover={{ scale: 1.01 }}
-                  onClick={() => setSelectedGallery(index)}
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                    loading="lazy"
+            <div className="mt-12 relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5">
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentGalleryIndex}
+                    src={galleryItems[currentGalleryIndex].src}
+                    alt={galleryItems[currentGalleryIndex].alt}
+                    className="h-full w-full object-cover"
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.05 }}
+                    transition={{ duration: 0.8 }}
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(15,53,32,0.08)_48%,rgba(15,53,32,0.72)_100%)]" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <p className="text-[11px] tracking-[0.32em] text-[#C9A227] uppercase">Galeria</p>
-                    <h3 className="mt-2 font-display text-2xl">{item.title}</h3>
-                  </div>
-                </motion.button>
-              ))}
+                </AnimatePresence>
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f3520]/80 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <p className="text-xs tracking-[0.3em] text-[#C9A227] uppercase">Galeria</p>
+                  <h3 className="mt-2 font-display text-3xl text-white">{galleryItems[currentGalleryIndex].title}</h3>
+                </div>
+
+                {/* Botões de navegação do carrossel */}
+                <button
+                  onClick={() => setCurrentGalleryIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length)}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-black/40 p-3 text-white backdrop-blur-md transition hover:bg-black/60"
+                  aria-label="Anterior"
+                >
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => setCurrentGalleryIndex((prev) => (prev + 1) % galleryItems.length)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-black/40 p-3 text-white backdrop-blur-md transition hover:bg-black/60"
+                  aria-label="Próximo"
+                >
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Indicadores do carrossel */}
+              <div className="flex justify-center gap-2 p-4 bg-black/20">
+                {galleryItems.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentGalleryIndex(index)}
+                    className={cn(
+                      "h-2 rounded-full transition-all",
+                      index === currentGalleryIndex ? "w-8 bg-[#C9A227]" : "w-2 bg-white/30"
+                    )}
+                    aria-label={`Ver imagem ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -1050,7 +1032,7 @@ export default function App() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Resultados"
-              title="Números que mostram o impacto da consultoria."
+              title="O impacto da consultoria em números"
               description="Performance, eficiência e ganho patrimonial caminhando juntos em uma operação mais previsível e resiliente."
               center
             />
@@ -1059,10 +1041,10 @@ export default function App() {
               <GlassPanel className="p-8 lg:p-10">
                 <div className="grid gap-4 md:grid-cols-2">
                   {[
-                    { value: "+500", label: "Propriedades atendidas" },
-                    { value: "+100 mil", label: "hectares monitorados" },
+                    { value: "+500", label: "Produtores atendidos" },
+                    { value: "+100 mil", label: "hectares sob gestão" },
                     { value: "+20", label: "anos de experiência" },
-                    { value: "Milhões", label: "economizados em insumos" },
+                    { value: "Milhões", label: "em valorização patrimonial" },
                   ].map((item) => (
                     <div key={item.label} className="rounded-[28px] border border-white/8 bg-white/4 p-6">
                       <div className="font-display text-4xl text-white md:text-5xl">{item.value}</div>
@@ -1103,7 +1085,7 @@ export default function App() {
             <div className="mt-14 grid gap-4 lg:grid-cols-[1fr_1.18fr]">
               <GlassPanel className="p-6 lg:p-8">
                 <div className="flex items-center justify-between">
-                  <p className="text-sm tracking-[0.28em] text-[#C9A227] uppercase">Slider</p>
+                  <p className="text-sm tracking-[0.28em] text-[#C9A227] uppercase">Depoimento</p>
                   <div className="flex gap-2">
                     {testimonials.map((_, index) => (
                       <button
@@ -1142,7 +1124,7 @@ export default function App() {
                         </div>
                       </div>
                       <p className="text-xl leading-9 text-white/86 md:text-2xl">
-                        {testimonials[activeTestimonial].quote}
+                        "{testimonials[activeTestimonial].quote}"
                       </p>
                     </motion.div>
                   </AnimatePresence>
@@ -1179,39 +1161,106 @@ export default function App() {
                 transition={{ duration: 0.7 }}
                 className="mx-auto max-w-4xl"
               >
-                <p className="text-xs tracking-[0.38em] text-[#C9A227] uppercase">CTA Gigante</p>
+                <p className="text-xs tracking-[0.38em] text-[#C9A227] uppercase">Sua próxima safra começa aqui</p>
                 <h2 className="mt-5 font-display text-4xl leading-tight text-white md:text-6xl">Sua fazenda pode produzir muito mais.</h2>
                 <p className="mt-5 text-lg leading-8 text-white/80">Vamos conversar e transformar inteligência em produtividade, rentabilidade e legado.</p>
                 <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
                   <ArrowButton label="Quero um Diagnóstico" href="#contato" tone="gold" />
-                  <ArrowButton label="Falar com Especialista" href={whatsappUrl} tone="green" />
+                  <ArrowButton label="Falar com Especialista" href={whatsappUrl} tone="green" target="_blank" />
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Contato */}
+        {/* Contato com Neuro-linguística - sem mapa */}
         <section id="contato" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Contato"
-              title="Converse com a TECNOAGRO."
-              description="Envie seus dados e descreva a área cultivada. O formulário está preparado para integração com PHP e PHPMailer via SMTP, com fallback para WhatsApp quando o endpoint não estiver disponível."
+              title="O primeiro passo para transformar sua propriedade"
+              description="Preencha o formulário ou fale diretamente conosco. Cada minuto sem ação é uma oportunidade perdida de valorização."
               center
             />
 
-            <div className="mt-14 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-              <GlassPanel className="overflow-hidden p-0">
-                <iframe
-                  title="Mapa TECNOAGRO"
-                  className="h-[28rem] w-full border-0 grayscale-[0.15]"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=-48.75%2C-15.95%2C-47.85%2C-15.1&layer=mapnik"
-                />
+            <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_1fr]">
+              {/* Lado esquerdo - Neuro-linguística forçando contato */}
+              <GlassPanel className="p-8 lg:p-10 flex flex-col justify-between">
+                <div>
+                  <p className="text-xs tracking-[0.36em] text-[#C9A227] uppercase">Por que esperar?</p>
+                  <h3 className="mt-4 font-display text-3xl text-white">O produtor que vence não espera o momento certo. Ele cria.</h3>
+                  
+                  <div className="mt-8 space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="mt-1 text-2xl">⏳</div>
+                      <div>
+                        <p className="font-semibold text-white">Enquanto você decide, outros avançam</p>
+                        <p className="text-sm text-white/65">A diferença entre o produtor que prospera e o que apenas sobrevive está na velocidade da decisão.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="mt-1 text-2xl">💰</div>
+                      <div>
+                        <p className="font-semibold text-white">Cada hectare pode render 30% mais</p>
+                        <p className="text-sm text-white/65">O que você faria se soubesse que pode transformar sua propriedade em um patrimônio 3x mais valioso?</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="mt-1 text-2xl">🤝</div>
+                      <div>
+                        <p className="font-semibold text-white">Você não precisa fazer isso sozinho</p>
+                        <p className="text-sm text-white/65">Nossos especialistas estão prontos para construir junto com você o futuro da sua fazenda.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Mensagem oculta com neuro-linguística */}
+                  <div className="mt-8 p-4 rounded-2xl border border-[#C9A227]/20 bg-[#C9A227]/5">
+                    <p className="text-xs tracking-[0.3em] text-[#C9A227]/40 text-center select-none">
+                      · O que você faria se pudesse multiplicar o valor da sua terra em 5 anos? ·
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-8 border-t border-white/10">
+                  <p className="text-sm text-white/60 mb-4">Fale diretamente com um especialista:</p>
+                  <div className="flex flex-wrap gap-4">
+                    <a 
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 rounded-full bg-[#25D366] px-6 py-3 text-white font-semibold transition hover:bg-[#1da851]"
+                    >
+                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                      </svg>
+                      WhatsApp
+                    </a>
+                    <a 
+                      href="https://instagram.com/tecnoagro"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 rounded-full bg-[#E4405F] px-6 py-3 text-white font-semibold transition hover:bg-[#d13a54]"
+                    >
+                      <svg className="h-5 w-5" fill="white" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                      </svg>
+                      Instagram
+                    </a>
+                    <a 
+                      href="mailto:contato@tecnoagro.com.br"
+                      className="flex items-center gap-3 rounded-full bg-[#13482A] border border-white/20 px-6 py-3 text-white font-semibold transition hover:bg-[#1E6B3A]"
+                    >
+                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      Email
+                    </a>
+                  </div>
+                </div>
               </GlassPanel>
 
+              {/* Lado direito - Formulário */}
               <GlassPanel className="p-6 sm:p-8 lg:p-10">
                 <div className="flex items-center justify-between gap-4">
                   <div>
@@ -1225,11 +1274,11 @@ export default function App() {
 
                 <form className="mt-8 grid gap-4" onSubmit={submitContact}>
                   {[
-                    { name: "nome", label: "Nome", type: "text", placeholder: "Seu nome" },
-                    { name: "telefone", label: "Telefone", type: "tel", placeholder: "(00) 00000-0000" },
-                    { name: "cidade", label: "Cidade", type: "text", placeholder: "Cidade / Estado" },
+                    { name: "nome", label: "Nome completo", type: "text", placeholder: "Seu nome" },
+                    { name: "telefone", label: "Telefone com WhatsApp", type: "tel", placeholder: "(00) 00000-0000" },
+                    { name: "cidade", label: "Cidade / Estado", type: "text", placeholder: "Cidade / Estado" },
                     { name: "email", label: "Email", type: "email", placeholder: "voce@empresa.com.br" },
-                    { name: "area", label: "Área cultivada", type: "text", placeholder: "Ex.: 1.250 ha" },
+                    { name: "area", label: "Área cultivada (ha)", type: "text", placeholder: "Ex.: 1.250" },
                   ].map((field) => (
                     <label key={field.name} className="grid gap-2 text-sm text-white/74">
                       <span>{field.label}</span>
@@ -1258,26 +1307,33 @@ export default function App() {
 
                   <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
                     <ArrowButton
-                      label={formStatus === "sending" ? "Enviando" : "Solicitar Diagnóstico"}
+                      label={formStatus === "sending" ? "Enviando..." : "Solicitar Diagnóstico"}
                       tone="gold"
                       type="submit"
                     />
                     <p className={cn("text-sm", formStatus === "success" ? "text-[#5CA66B]" : formStatus === "error" ? "text-[#C9A227]" : "text-white/55")}>
                       {formStatus === "success"
-                        ? "Mensagem enviada com sucesso."
+                        ? "✓ Mensagem enviada com sucesso!"
                         : formStatus === "error"
-                          ? "O envio foi redirecionado para o WhatsApp."
-                          : "Respostas rápidas por WhatsApp ou SMTP com PHPMailer."}
+                          ? "Redirecionando para WhatsApp..."
+                          : "Respostas rápidas via WhatsApp ou SMTP"}
                     </p>
                   </div>
                 </form>
+
+                {/* Mensagem adicional de urgência */}
+                <div className="mt-6 p-4 rounded-xl border border-[#C9A227]/10 bg-[#C9A227]/5">
+                  <p className="text-xs text-center text-white/50">
+                    ⚡ <span className="text-[#C9A227]">Primeiro diagnóstico gratuito</span> para as primeiras 10 propriedades
+                  </p>
+                </div>
               </GlassPanel>
             </div>
           </div>
         </section>
       </main>
 
-      {/* Rodapé Premium */}
+      {/* Rodapé Premium com logo maior */}
       <footer className="border-t border-white/10 bg-[#0f3520] py-14">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1fr_0.8fr] lg:px-8">
           <div className="space-y-4">
@@ -1285,7 +1341,7 @@ export default function App() {
               <img 
                 src="/logo.png" 
                 alt="TECNOAGRO" 
-                className="h-14 w-auto object-contain"
+                className="h-16 w-auto object-contain" // Logo maior no rodapé
               />
             </div>
             <p className="max-w-sm text-sm leading-7 text-white/68">
@@ -1310,18 +1366,21 @@ export default function App() {
           <div>
             <p className="text-sm tracking-[0.28em] text-[#C9A227] uppercase">Contato</p>
             <div className="mt-4 space-y-3 text-sm text-white/68">
-              <p>Telefone: +55 (11) 99999-9999</p>
-              <p>WhatsApp: +55 (11) 99999-9999</p>
-              <p>Email: contato@tecnoagro.com.br</p>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block transition hover:text-[#25D366]">
+                WhatsApp: +55 61 99648-1878
+              </a>
+              <a href="mailto:contato@tecnoagro.com.br" className="block transition hover:text-white">
+                Email: contato@tecnoagro.com.br
+              </a>
             </div>
             <div className="mt-6 flex flex-wrap gap-3 text-sm text-white/65">
-              <a className="transition hover:text-white" href="https://instagram.com/tecnoagro" target="_blank" rel="noreferrer">
+              <a className="transition hover:text-[#E4405F]" href="https://instagram.com/tecnoagro" target="_blank" rel="noreferrer">
                 Instagram
               </a>
-              <a className="transition hover:text-white" href="https://facebook.com/tecnoagro" target="_blank" rel="noreferrer">
+              <a className="transition hover:text-[#1877F2]" href="https://facebook.com/tecnoagro" target="_blank" rel="noreferrer">
                 Facebook
               </a>
-              <a className="transition hover:text-white" href="https://linkedin.com/company/tecnoagro" target="_blank" rel="noreferrer">
+              <a className="transition hover:text-[#0A66C2]" href="https://linkedin.com/company/tecnoagro" target="_blank" rel="noreferrer">
                 LinkedIn
               </a>
             </div>
@@ -1334,59 +1393,19 @@ export default function App() {
         </div>
       </footer>
 
-      {/* WhatsApp Flutuante */}
+      {/* WhatsApp Flutuante - CORES PADRÃO WHATSAPP */}
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#1E6B3A] text-white shadow-[0_18px_40px_rgba(0,0,0,0.28)] ring-1 ring-[#C9A227]/30 transition hover:-translate-y-1 hover:bg-[#13482A]"
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_30px_rgba(37,211,102,0.4)] transition hover:scale-110 hover:shadow-[0_8px_40px_rgba(37,211,102,0.6)]"
         aria-label="Falar no WhatsApp"
       >
-        <span className="absolute inset-0 rounded-full bg-[#C9A227]/30 animate-ping opacity-40" />
-        <svg className="relative h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M20 12c0 4.4-3.6 8-8 8a7.8 7.8 0 0 1-3.8-.95L4 20l1.08-4.05A7.9 7.9 0 0 1 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8Z" />
-          <path d="M9.5 8.75c.25-.55.54-.6.92-.6h.72c.2 0 .46.08.6.36l.8 1.72c.13.28.11.5-.04.69l-.52.64c-.15.18-.2.42-.08.68.18.39.7 1.24 1.48 2.01.78.78 1.63 1.3 2.02 1.48.26.12.5.07.68-.08l.64-.52c.18-.15.41-.17.69-.04l1.72.8c.27.13.36.39.36.6v.72c0 .38-.05.67-.6.92-.42.19-.9.29-1.56.29-1.84 0-4.3-1.32-6.19-3.22-1.9-1.9-3.22-4.36-3.22-6.2 0-.65.1-1.14.29-1.56Z" />
+        <span className="absolute inset-0 rounded-full bg-[#25D366]/40 animate-ping opacity-40" />
+        <svg className="relative h-7 w-7" viewBox="0 0 24 24" fill="white">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
       </a>
-
-      {/* Lightbox da Galeria */}
-      <AnimatePresence>
-        {selectedGallery !== null ? (
-          <motion.div
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 px-4 py-8 backdrop-blur-xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedGallery(null)}
-          >
-            <motion.div
-              className="relative w-full max-w-6xl overflow-hidden rounded-[32px] border border-white/10 bg-[#0f3520] shadow-[0_30px_100px_rgba(0,0,0,0.45)]"
-              initial={{ scale: 0.94, y: 18 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.94, y: 18 }}
-              transition={{ duration: 0.28 }}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <button
-                type="button"
-                className="absolute right-4 top-4 z-10 rounded-full border border-white/10 bg-black/35 px-4 py-2 text-sm text-white/80 backdrop-blur-md transition hover:text-white"
-                onClick={() => setSelectedGallery(null)}
-              >
-                Fechar
-              </button>
-              <img
-                src={galleryItems[selectedGallery].src}
-                alt={galleryItems[selectedGallery].alt}
-                className="max-h-[80vh] w-full object-cover"
-              />
-              <div className="border-t border-white/10 px-6 py-5">
-                <p className="text-xs tracking-[0.3em] text-[#C9A227] uppercase">Lightbox</p>
-                <h3 className="mt-2 font-display text-2xl text-white">{galleryItems[selectedGallery].title}</h3>
-              </div>
-            </motion.div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
     </div>
   );
 }
