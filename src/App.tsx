@@ -178,7 +178,7 @@ function ArrowButton({
       : "px-5 py-2.5 text-xs",
     tone === "gold"
       ? "bg-[#C9A227] text-[#13482A] shadow-[0_12px_30px_rgba(201,162,39,0.25)] hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(201,162,39,0.35)]"
-      : "bg-[#13482A] text-white border border-white/30 hover:bg-[#1E6B3A] hover:border-[#C9A227]/50"
+      : "bg-[#13482A] text-white border-2 border-white/40 hover:bg-[#1E6B3A] hover:border-[#C9A227]/60 shadow-[0_8px_24px_rgba(0,0,0,0.3)]"
   );
 
   if (href) {
@@ -823,6 +823,62 @@ export default function App() {
                       </div>
                       <svg className="h-5 w-5 text-white/40 transition group-hover:text-[#C9A227] group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                     </a>
+
+                    {/* Texto persuasivo com neurolinguística, psicologia e psicanálise */}
+                    <div className="mt-10 pt-8 border-t border-white/10">
+                      <div className="space-y-6">
+                        <div className="flex items-start gap-3">
+                          <div className="mt-1 text-[#C9A227] flex-shrink-0">
+                            <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="font-display text-lg text-white mb-2">Você já sabe que pode ir além</p>
+                            <p className="text-sm text-white/70 leading-relaxed">
+                              No fundo, você já percebeu que sua propriedade tem um potencial que ainda não foi liberado. A questão não é <em>se</em> você pode produzir mais. É <em>quando</em> você vai decidir começar.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-3">
+                          <div className="mt-1 text-[#C9A227] flex-shrink-0">
+                            <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="font-display text-lg text-white mb-2">O custo de esperar é maior do que você imagina</p>
+                            <p className="text-sm text-white/70 leading-relaxed">
+                              Cada safra que passa sem uma estratégia clara é uma oportunidade que não volta. Enquanto você adia, outro produtor está na frente. A pergunta é: por quanto tempo você vai deixar isso acontecer?
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-3">
+                          <div className="mt-1 text-[#C9A227] flex-shrink-0">
+                            <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="font-display text-lg text-white mb-2">Não é sobre gasto. É sobre investimento no seu legado</p>
+                            <p className="text-sm text-white/70 leading-relaxed">
+                              O que você constrói hoje não é só para você. É para quem vem depois. Para o nome da sua família no campo. Para a tranquilidade de saber que fez tudo o que podia. Essa conversa pode ser o ponto de virada.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="mt-8 p-5 rounded-2xl border border-[#C9A227]/30 bg-gradient-to-r from-[#C9A227]/10 to-transparent">
+                          <p className="text-center font-display text-lg text-white mb-2">
+                            Daqui a um ano, você vai agradecer a decisão que tomar hoje.
+                          </p>
+                          <p className="text-center text-sm text-[#C9A227]">
+                            Ou vai se perguntar por que esperou tanto.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </GlassPanel>
