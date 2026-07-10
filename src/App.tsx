@@ -238,7 +238,7 @@ function ArrowButton({
 }: {
   label: string;
   href?: string;
-  tone?: "gold" | "green" | "dark";
+  tone?: "gold" | "dark";
   onClick?: () => void;
   type?: "button" | "submit";
   target?: "_self" | "_blank";
@@ -247,9 +247,7 @@ function ArrowButton({
     "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-[0.22em] transition duration-300 font-button",
     tone === "gold"
       ? "bg-[#C9A227] text-[#13482A] shadow-[0_18px_40px_rgba(201,162,39,0.28)] hover:-translate-y-0.5 hover:shadow-[0_24px_55px_rgba(201,162,39,0.36)]"
-      : tone === "dark"
-      ? "bg-[#13482A] text-white border border-white/20 hover:bg-[#1E6B3A] hover:border-[#C9A227]/30"
-      : "bg-white/15 text-white border border-white/20 hover:bg-white/25 hover:border-[#C9A227]/40",
+      : "bg-[#13482A] text-white border border-white/25 hover:bg-[#1E6B3A] hover:border-[#C9A227]/40",
   );
 
   if (href) {
@@ -1140,7 +1138,7 @@ export default function App() {
                 <p className="mt-5 text-lg leading-8 text-white/80">Vamos conversar e transformar inteligência em produtividade, rentabilidade e legado.</p>
                 <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
                   <ArrowButton label="Quero um Diagnóstico" href="#contato" tone="gold" />
-                  <ArrowButton label="Falar com Especialista" href={whatsappUrl} tone="dark" target="_blank" />
+                  <ArrowButton label="Fale com Especialista" href={whatsappUrl} tone="dark" target="_blank" />
                 </div>
               </motion.div>
             </div>
@@ -1300,7 +1298,7 @@ export default function App() {
         </section>
       </main>
 
-      {/* Rodapé com logo verde */}
+      {/* Rodapé com logo verde - CORRIGIDO */}
       <footer className="border-t border-white/10 py-14" style={{ background: '#0f3520' }}>
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1fr_0.8fr] lg:px-8">
           <div className="space-y-4">
@@ -1314,7 +1312,7 @@ export default function App() {
                 }}
               />
             </div>
-            <p className="max-w-sm text-sm leading-7 text-white/70">
+            <p className="max-w-sm text-sm leading-7 text-white/80">
               Uma consultoria premium em inteligência agronômica para propriedades que buscam produtividade, rentabilidade e legado.
             </p>
             <p className="text-xs tracking-[0.3em] text-[#C9A227] uppercase">
@@ -1326,7 +1324,7 @@ export default function App() {
             <p className="text-sm tracking-[0.28em] text-[#C9A227] uppercase">Menu</p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {navLinks.map((link) => (
-                <a key={link.id} href={`#${link.id}`} className="text-sm text-white/70 transition hover:text-white">
+                <a key={link.id} href={`#${link.id}`} className="text-sm text-white/80 transition hover:text-white">
                   {link.label}
                 </a>
               ))}
@@ -1335,7 +1333,7 @@ export default function App() {
 
           <div>
             <p className="text-sm tracking-[0.28em] text-[#C9A227] uppercase">Contato</p>
-            <div className="mt-4 space-y-3 text-sm text-white/70">
+            <div className="mt-4 space-y-3 text-sm text-white/80">
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block transition hover:text-[#25D366]">
                 WhatsApp: +55 61 99648-1878
               </a>
@@ -1360,7 +1358,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-white/8 px-4 pt-6 text-sm text-white/40 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+        <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-white/8 px-4 pt-6 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>TECNOAGRO © 2026</p>
           <p>Estrutura preparada para Google Analytics, Meta Pixel e Google Ads.</p>
         </div>
