@@ -5,6 +5,7 @@ import { cn } from "./utils/cn";
 type SectionLink = {
   id: string;
   label: string;
+  submenu?: { id: string; label: string }[];
 };
 
 type CounterItem = {
@@ -39,9 +40,24 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(w
 
 const navLinks: SectionLink[] = [
   { id: "home", label: "Home" },
-  { id: "quem-somos", label: "Quem Somos" },
-  { id: "estrategias", label: "Estratégias" },
-  { id: "servicos", label: "Serviços" },
+  { 
+    id: "sobre", 
+    label: "Sobre",
+    submenu: [
+      { id: "quem-somos", label: "Quem Somos" },
+      { id: "diferenciais", label: "Diferenciais" },
+      { id: "processo", label: "Processo" }
+    ]
+  },
+  { 
+    id: "servicos", 
+    label: "Serviços",
+    submenu: [
+      { id: "estrategia-gestao", label: "Estratégia e Gestão" },
+      { id: "campo-manejo", label: "Campo e Manejo" },
+      { id: "tecnologia-precisao", label: "Tecnologia e Precisão" }
+    ]
+  },
   { id: "galeria", label: "Galeria" },
   { id: "resultados", label: "Resultados" },
   { id: "contato", label: "Contato" },
@@ -427,6 +443,7 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [selectedGallery, setSelectedGallery] = useState<number | null>(null);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const [formState, setFormState] = useState({
     nome: "",
     telefone: "",
@@ -516,72 +533,106 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#13482A] text-white">
-      <div className="pointer-events-none fixed inset-0 -z-30 bg-[radial-gradient(circle_at_top,rgba(92,166,107,0.18),transparent_36%),radial-gradient(circle_at_bottom_right,rgba(201,162,39,0.12),transparent_26%),linear-gradient(180deg,#0f3520_0%,#13482a_48%,#1f2933_100%)]" />
-      <div className="pointer-events-none fixed inset-0 -z-20 bg-[linear-gradient(transparent_0,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,transparent_0,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:80px_80px] opacity-30" />
-
-      <header
-        className={cn(
-          "fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-500",
-          scrolled ? "border-white/10 bg-[#13482A]/90 backdrop-blur-xl shadow-[0_18px_60px_rgba(0,0,0,0.22)]" : "bg-transparent",
-        )}
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <a href="#home" className="flex items-center gap-3 text-white">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#C9A227]/30 bg-white/6 text-[#C9A227] backdrop-blur-md">
-              <LogoMark className="h-8 w-8" />
-            </div>
-            <div>
-              <p className="font-display text-xl leading-none tracking-[0.22em]">TECNOAGRO</p>
-              <p className="mt-1 text-[11px] tracking-[0.35em] text-white/55 uppercase">Inteligência que cultiva legados</p>
-            </div>
+    <div className="relative min-h-screen overflow-x-hidden bg-[#F5F6F7] text-[#1F2933]">
+      {/* Header com fundo branco e logo visível */}
+      <header className={cn(
+        "fixed inset-x-0 top-0 z-50 border-b transition-all duration-500",
+        scrolled 
+          ? "border-[#1E6B3A]/10 bg-white/95 backdrop-blur-xl shadow-[0_18px_60px_rgba(0,0,0,0.08)]" 
+          : "border-transparent bg-white"
+      )}>
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+          <a href="#home" className="flex items-center gap-3">
+            <img 
+              src="/logo.png" 
+              alt="TECNOAGRO" 
+              className="h-12 w-auto object-contain"
+            />
           </a>
 
-          <nav className="hidden items-center gap-7 lg:flex">
+          <nav className="hidden items-center gap-6 lg:flex">
             {navLinks.map((link) => (
-              <a
+              <div 
                 key={link.id}
-                className="text-sm tracking-[0.14em] text-white/72 transition hover:text-white"
-                href={`#${link.id}`}
+                className="relative group"
+                onMouseEnter={() => setActiveSubmenu(link.id)}
+                onMouseLeave={() => setActiveSubmenu(null)}
               >
-                {link.label}
-              </a>
+                <a
+                  className="text-sm font-medium tracking-[0.08em] text-[#1F2933] transition hover:text-[#1E6B3A]"
+                  href={`#${link.id}`}
+                >
+                  {link.label}
+                </a>
+                {link.submenu && (
+                  <div className={cn(
+                    "absolute left-0 top-full pt-2 transition-all duration-200",
+                    activeSubmenu === link.id ? "opacity-100 visible" : "opacity-0 invisible"
+                  )}>
+                    <div className="min-w-[220px] rounded-2xl bg-white p-2 shadow-[0_18px_60px_rgba(0,0,0,0.12)] border border-[#1E6B3A]/10">
+                      {link.submenu.map((sub) => (
+                        <a
+                          key={sub.id}
+                          href={`#${sub.id}`}
+                          className="block rounded-xl px-4 py-3 text-sm text-[#1F2933] transition hover:bg-[#1E6B3A]/5 hover:text-[#1E6B3A]"
+                        >
+                          {sub.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
             <ArrowButton label="Falar com Especialista" href={whatsappUrl} tone="gold" />
           </nav>
 
           <button
-            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/6 px-4 py-3 text-sm text-white/90 backdrop-blur-md transition hover:border-[#C9A227]/40 hover:bg-white/10 lg:hidden"
+            className="inline-flex flex-col items-center justify-center gap-1 rounded-xl border border-[#1E6B3A]/20 bg-white px-4 py-3 text-[#1F2933] transition hover:bg-[#1E6B3A]/5 lg:hidden"
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-label="Abrir menu"
           >
-            <span className="sr-only">Menu</span>
-            <span className="block h-0.5 w-5 bg-current" />
-            <span className="mt-1 block h-0.5 w-5 bg-current" />
-            <span className="mt-1 block h-0.5 w-5 bg-current" />
+            <span className="block h-0.5 w-5 bg-[#1E6B3A]" />
+            <span className="block h-0.5 w-5 bg-[#1E6B3A]" />
+            <span className="block h-0.5 w-5 bg-[#1E6B3A]" />
           </button>
         </div>
 
         <AnimatePresence>
           {menuOpen ? (
             <motion.div
-              className="border-t border-white/10 bg-[#0f3520]/98 px-4 py-5 backdrop-blur-xl lg:hidden"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              className="border-t border-[#1E6B3A]/10 bg-white px-4 py-5 lg:hidden"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
             >
-              <div className="mx-auto flex max-w-7xl flex-col gap-4">
+              <div className="mx-auto flex max-w-7xl flex-col gap-3">
                 {navLinks.map((link) => (
-                  <a
-                    key={link.id}
-                    className="rounded-2xl px-2 py-3 text-base tracking-[0.12em] text-white/80 transition hover:bg-white/6 hover:text-white"
-                    href={`#${link.id}`}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {link.label}
-                  </a>
+                  <div key={link.id}>
+                    <a
+                      className="block rounded-xl px-3 py-3 text-base font-medium text-[#1F2933] transition hover:bg-[#1E6B3A]/5 hover:text-[#1E6B3A]"
+                      href={`#${link.id}`}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {link.label}
+                    </a>
+                    {link.submenu && (
+                      <div className="ml-4 space-y-1 border-l-2 border-[#1E6B3A]/20 pl-4">
+                        {link.submenu.map((sub) => (
+                          <a
+                            key={sub.id}
+                            href={`#${sub.id}`}
+                            className="block rounded-xl px-3 py-2 text-sm text-[#1F2933]/70 transition hover:bg-[#1E6B3A]/5 hover:text-[#1E6B3A]"
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            {sub.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
                 <ArrowButton
                   label="Falar com Especialista"
@@ -596,7 +647,8 @@ export default function App() {
       </header>
 
       <main>
-        <section ref={heroRef} id="home" className="relative flex min-h-[100svh] items-center overflow-hidden pt-24">
+        {/* Hero Section - Fundo com vídeo e overlay verde escuro */}
+        <section ref={heroRef} id="home" className="relative flex min-h-[100svh] items-center overflow-hidden pt-20">
           <motion.div className="absolute inset-0" style={{ y: videoY, scale: videoScale }}>
             <video
               className="h-full w-full object-cover"
@@ -611,7 +663,7 @@ export default function App() {
             </video>
           </motion.div>
 
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,53,32,0.88)_0%,rgba(15,53,32,0.68)_40%,rgba(15,53,32,0.18)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,53,32,0.92)_0%,rgba(15,53,32,0.7)_40%,rgba(15,53,32,0.2)_100%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,53,32,0.24)_0%,rgba(15,53,32,0.45)_100%)]" />
 
           {floatingParticles.map((particle, index) => (
@@ -681,6 +733,7 @@ export default function App() {
           <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0f3520] to-transparent" />
         </section>
 
+        {/* Seção de Contadores */}
         <section className="border-y border-white/8 bg-white/[0.03] py-10">
           <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-8">
             {counters.map((item) => (
@@ -694,7 +747,8 @@ export default function App() {
           </div>
         </section>
 
-        <section id="quem-somos" className="py-24 md:py-32">
+        {/* Quem Somos */}
+        <section id="quem-somos" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto grid max-w-7xl gap-16 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8">
             <motion.div
               className="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-4 backdrop-blur-xl"
@@ -757,7 +811,8 @@ export default function App() {
           </div>
         </section>
 
-        <section id="estrategias" className="py-24 md:py-32">
+        {/* Estratégias */}
+        <section id="estrategias" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Estratégias"
@@ -791,7 +846,8 @@ export default function App() {
           </div>
         </section>
 
-        <section id="diferenciais" className="py-24 md:py-32">
+        {/* Diferenciais */}
+        <section id="diferenciais" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Diferenciais"
@@ -825,11 +881,12 @@ export default function App() {
           </div>
         </section>
 
-        <section id="servicos" className="py-24 md:py-32">
+        {/* Serviços */}
+        <section id="servicos" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Serviços"
-              title="Muito espaço em branco. Estrutura precisa. Visual sofisticado."
+              title="Soluções completas para o agro de alta performance."
               description="Cada serviço foi organizado para transmitir clareza, escala e amplitude técnica, com a elegância de uma consultoria global e a identidade do campo brasileiro."
               center
             />
@@ -868,7 +925,8 @@ export default function App() {
           </div>
         </section>
 
-        <section id="processo" className="py-24 md:py-32">
+        {/* Processo */}
+        <section id="processo" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Processo"
@@ -906,7 +964,8 @@ export default function App() {
           </div>
         </section>
 
-        <section id="galeria" className="py-24 md:py-32">
+        {/* Galeria */}
+        <section id="galeria" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Galeria Premium"
@@ -948,7 +1007,8 @@ export default function App() {
           </div>
         </section>
 
-        <section id="visao" className="py-24 md:py-32">
+        {/* Visão de Futuro */}
+        <section id="visao" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div
               className="relative overflow-hidden rounded-[40px] border border-white/10"
@@ -985,7 +1045,8 @@ export default function App() {
           </div>
         </section>
 
-        <section id="resultados" className="py-24 md:py-32">
+        {/* Resultados */}
+        <section id="resultados" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Resultados"
@@ -1029,7 +1090,8 @@ export default function App() {
           </div>
         </section>
 
-        <section id="depoimentos" className="py-24 md:py-32">
+        {/* Depoimentos */}
+        <section id="depoimentos" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Depoimentos"
@@ -1106,7 +1168,8 @@ export default function App() {
           </div>
         </section>
 
-        <section className="py-24 md:py-32">
+        {/* CTA Gigante */}
+        <section className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="overflow-hidden rounded-[40px] border border-white/10 bg-[#1E6B3A] px-6 py-16 text-center shadow-[0_28px_100px_rgba(0,0,0,0.32)] sm:px-10 lg:px-16">
               <motion.div
@@ -1128,7 +1191,8 @@ export default function App() {
           </div>
         </section>
 
-        <section id="contato" className="py-24 md:py-32">
+        {/* Contato */}
+        <section id="contato" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Contato"
@@ -1213,20 +1277,22 @@ export default function App() {
         </section>
       </main>
 
+      {/* Rodapé Premium */}
       <footer className="border-t border-white/10 bg-[#0f3520] py-14">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1fr_0.8fr] lg:px-8">
           <div className="space-y-4">
-            <div className="flex items-center gap-3 text-white">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#C9A227]/30 bg-white/6 text-[#C9A227]">
-                <LogoMark className="h-8 w-8" />
-              </div>
-              <div>
-                <p className="font-display text-xl tracking-[0.22em]">TECNOAGRO</p>
-                <p className="mt-1 text-xs tracking-[0.3em] text-white/54 uppercase">Cultivando inteligência. Colhendo resultados.</p>
-              </div>
+            <div className="flex items-center gap-3">
+              <img 
+                src="/logo.png" 
+                alt="TECNOAGRO" 
+                className="h-14 w-auto object-contain"
+              />
             </div>
             <p className="max-w-sm text-sm leading-7 text-white/68">
               Uma consultoria premium em inteligência agronômica para propriedades que buscam produtividade, rentabilidade e legado.
+            </p>
+            <p className="text-xs tracking-[0.3em] text-[#C9A227] uppercase">
+              Cultivando inteligência. Colhendo resultados.
             </p>
           </div>
 
@@ -1268,6 +1334,7 @@ export default function App() {
         </div>
       </footer>
 
+      {/* WhatsApp Flutuante */}
       <a
         href={whatsappUrl}
         target="_blank"
@@ -1282,6 +1349,7 @@ export default function App() {
         </svg>
       </a>
 
+      {/* Lightbox da Galeria */}
       <AnimatePresence>
         {selectedGallery !== null ? (
           <motion.div
