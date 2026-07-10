@@ -171,29 +171,44 @@ function ArrowButton({
   target?: "_self" | "_blank";
   size?: "default" | "sm";
 }) {
-  const classes = cn(
+  const isGold = tone === "gold";
+  
+  const baseClasses = cn(
     "inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-[0.18em] transition duration-300 font-button",
-    size === "sm" 
-      ? "px-4 py-2 text-xs" 
-      : "px-5 py-2.5 text-xs",
-    tone === "gold"
-      ? "bg-[#C9A227] text-[#13482A] shadow-[0_12px_30px_rgba(201,162,39,0.25)] hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(201,162,39,0.35)]"
-      : "bg-[#13482A] text-white border-2 border-white/40 hover:bg-[#1E6B3A] hover:border-[#C9A227]/60 shadow-[0_8px_24px_rgba(0,0,0,0.3)]"
+    size === "sm" ? "px-4 py-2 text-xs" : "px-5 py-2.5 text-xs"
+  );
+
+  const toneClasses = isGold
+    ? "bg-[#C9A227] shadow-[0_12px_30px_rgba(201,162,39,0.25)] hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(201,162,39,0.35)]"
+    : "bg-[#13482A] border-2 border-white/40 shadow-[0_8px_24px_rgba(0,0,0,0.3)] hover:bg-[#1E6B3A] hover:border-[#C9A227]/60";
+
+  // COR INLINE - não pode ser sobrescrita pelo CSS
+  const textColor = isGold ? "#13482A" : "#FFFFFF";
+
+  const content = (
+    <>
+      <span style={{ color: textColor }}>{label}</span>
+      <span aria-hidden="true" style={{ color: textColor }}>→</span>
+    </>
   );
 
   if (href) {
     return (
-      <a className={classes} href={href} onClick={onClick} target={target} rel={target === "_blank" ? "noopener noreferrer" : undefined}>
-        <span>{label}</span>
-        <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+      <a 
+        className={cn(baseClasses, toneClasses)} 
+        href={href} 
+        onClick={onClick} 
+        target={target} 
+        rel={target === "_blank" ? "noopener noreferrer" : undefined}
+      >
+        {content}
       </a>
     );
   }
 
   return (
-    <button className={classes} onClick={onClick} type={type}>
-      <span>{label}</span>
-      <span aria-hidden="true">→</span>
+    <button className={cn(baseClasses, toneClasses)} onClick={onClick} type={type}>
+      {content}
     </button>
   );
 }
