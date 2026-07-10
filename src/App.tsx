@@ -26,12 +26,10 @@ type Testimonial = {
   photo: string;
 };
 
-// WhatsApp correto
+// Contato
 const whatsappNumber = "5561996481878";
 const whatsappMessage = "Olá, gostaria de agendar um diagnóstico da minha propriedade.";
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-// Redes sociais
 const instagramUrl = "https://instagram.com/tecnoagro8";
 const emailContato = "contato@tecnoagro.com.br";
 
@@ -60,27 +58,27 @@ const navLinks: SectionLink[] = [
   { id: "contato", label: "Contato" },
 ];
 
-// Mensagens de valor com neuro-linguística
+// Mensagens de valor com neurolinguística aplicada
 const valueMessages = [
   { 
     icon: "🎯", 
-    title: "Decisões que criam vantagem competitiva",
-    description: "Enquanto outros reagem ao mercado, você antecipa. Cada hectare se torna uma fonte de vantagem que seus concorrentes não terão."
+    title: "A vantagem de decidir antes",
+    description: "Enquanto o mercado reage, você antecipa. Cada decisão sua se torna um ativo que seus concorrentes não terão acesso."
   },
   { 
     icon: "⚡", 
-    title: "Resultados que falam por si mesmos",
-    description: "A excelência não precisa de apresentação. Ela se revela na colheita, nos números e na valorização do seu patrimônio."
+    title: "Excelência que se revela sozinha",
+    description: "Não precisa ser explicada. Ela aparece na colheita, nos números e na forma como sua propriedade é vista."
   },
   { 
     icon: "🌱", 
-    title: "Legado que transcende gerações",
-    description: "O que você constrói hoje é a base para as próximas safras. E para os próximos 30 anos da sua família no campo."
+    title: "O que você planta hoje, sua família colhe amanhã",
+    description: "Mais que uma safra, você constrói a base para as próximas décadas. O legado que ninguém tira de você."
   },
   { 
     icon: "🔮", 
-    title: "Visão que enxerga além da safra atual",
-    description: "O produtor que enxerga o futuro não espera. Ele constrói. E nós estamos aqui para transformar essa visão em realidade."
+    title: "Enxergar além do que está na frente",
+    description: "O produtor que vê o futuro não espera. Ele constrói. E transforma visão em realidade tangível."
   },
 ];
 
@@ -100,38 +98,14 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-// Fotos para o carrossel da galeria - IMAGENS DO PEXELS QUE FUNCIONAM
+// Galeria - imagens locais
 const galleryItems: GalleryItem[] = [
-  {
-    src: "https://images.pexels.com/photos/34940811/pexels-photo-34940811.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
-    alt: "Vista aérea de lavouras",
-    title: "Monitoramento com Drone",
-  },
-  {
-    src: "https://images.pexels.com/photos/26256446/pexels-photo-26256446.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
-    alt: "Colheitadeira em campo",
-    title: "Colheita de Alta Performance",
-  },
-  {
-    src: "https://images.pexels.com/photos/33787003/pexels-photo-33787003.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
-    alt: "Máquinas modernas",
-    title: "Tecnologia no Campo",
-  },
-  {
-    src: "https://images.pexels.com/photos/34182414/pexels-photo-34182414.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
-    alt: "Drones agrícolas",
-    title: "Agricultura de Precisão",
-  },
-  {
-    src: "https://images.pexels.com/photos/9276463/pexels-photo-9276463.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
-    alt: "Tratores operando",
-    title: "Plantio Estratégico",
-  },
-  {
-    src: "https://images.pexels.com/photos/31953698/pexels-photo-31953698.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
-    alt: "Gestão de talhões",
-    title: "Gestão Patrimonial",
-  },
+  { src: "/images/galeria/foto1.jpeg", alt: "Vista aérea de lavouras", title: "Monitoramento com Drone" },
+  { src: "/images/galeria/foto2.jpeg", alt: "Colheitadeira em campo", title: "Colheita de Alta Performance" },
+  { src: "/images/galeria/foto3.jpeg", alt: "Máquinas modernas", title: "Tecnologia no Campo" },
+  { src: "/images/galeria/foto4.jpeg", alt: "Drones agrícolas", title: "Agricultura de Precisão" },
+  { src: "/images/galeria/foto5.jpeg", alt: "Tratores operando", title: "Plantio Estratégico" },
+  { src: "/images/galeria/foto6.jpeg", alt: "Gestão de talhões", title: "Gestão Patrimonial" },
 ];
 
 const strategicPillars = [
@@ -150,78 +124,30 @@ const strategicPillars = [
 ];
 
 const differentiators = [
-  {
-    title: "Agricultura de Precisão",
-    text: "Tecnologia aplicada para enxergar a lavoura em nível de detalhe e agir com mais assertividade.",
-  },
-  {
-    title: "Inteligência Agronômica",
-    text: "Leitura técnica do campo, do solo ao clima, com visão consultiva e orientada a resultado.",
-  },
-  {
-    title: "Gestão de Rentabilidade",
-    text: "Planejamento que melhora o uso de insumos, custos e eficiência para elevar a margem do produtor.",
-  },
-  {
-    title: "Tecnologia no Campo",
-    text: "Integração entre monitoramento, máquinas e dados para operar com mais precisão e menos desperdício.",
-  },
-  {
-    title: "Ciência Aplicada",
-    text: "Recomendações fundamentadas em análise, observação e método, sem achismos na tomada de decisão.",
-  },
-  {
-    title: "Sustentabilidade",
-    text: "Práticas que preservam produtividade, conservam recursos e valorizam a terra no longo prazo.",
-  },
+  { title: "Agricultura de Precisão", text: "Tecnologia aplicada para enxergar a lavoura em nível de detalhe e agir com mais assertividade." },
+  { title: "Inteligência Agronômica", text: "Leitura técnica do campo, do solo ao clima, com visão consultiva e orientada a resultado." },
+  { title: "Gestão de Rentabilidade", text: "Planejamento que melhora o uso de insumos, custos e eficiência para elevar a margem do produtor." },
+  { title: "Tecnologia no Campo", text: "Integração entre monitoramento, máquinas e dados para operar com mais precisão e menos desperdício." },
+  { title: "Ciência Aplicada", text: "Recomendações fundamentadas em análise, observação e método, sem achismos na tomada de decisão." },
+  { title: "Sustentabilidade", text: "Práticas que preservam produtividade, conservam recursos e valorizam a terra no longo prazo." },
 ];
 
 const serviceGroups: ServiceGroup[] = [
   {
     title: "Estratégia e Gestão",
-    items: [
-      "Diagnóstico e Planejamento",
-      "Projetos de Crédito Rural",
-      "Seguro Agrícola",
-      "Gestão Financeira",
-      "Análise de Custos",
-      "Planejamento Estratégico",
-    ],
+    items: ["Diagnóstico e Planejamento", "Projetos de Crédito Rural", "Seguro Agrícola", "Gestão Financeira", "Análise de Custos", "Planejamento Estratégico"],
   },
   {
     title: "Campo e Manejo",
-    items: [
-      "Monitoramento de Lavouras",
-      "Análise de Solo",
-      "Calagem",
-      "Adubação",
-      "Manejo Integrado",
-      "Controle Fitossanitário",
-      "Rotação de Culturas",
-      "Relatórios Técnicos",
-    ],
+    items: ["Monitoramento de Lavouras", "Análise de Solo", "Calagem", "Adubação", "Manejo Integrado", "Controle Fitossanitário", "Rotação de Culturas", "Relatórios Técnicos"],
   },
   {
     title: "Tecnologia e Precisão",
-    items: [
-      "Agricultura de Precisão",
-      "Mapas de Fertilidade",
-      "Taxa Variável",
-      "Georreferenciamento",
-      "Treinamentos",
-      "Irrigação Inteligente",
-      "Máquinas Agrícolas",
-    ],
+    items: ["Agricultura de Precisão", "Mapas de Fertilidade", "Taxa Variável", "Georreferenciamento", "Treinamentos", "Irrigação Inteligente", "Máquinas Agrícolas"],
   },
 ];
 
-const processSteps = [
-  "Diagnóstico",
-  "Planejamento",
-  "Implantação",
-  "Monitoramento",
-  "Resultados",
-];
+const processSteps = ["Diagnóstico", "Planejamento", "Implantação", "Monitoramento", "Resultados"];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -235,6 +161,7 @@ function ArrowButton({
   onClick,
   type = "button",
   target = "_self",
+  size = "default",
 }: {
   label: string;
   href?: string;
@@ -242,19 +169,23 @@ function ArrowButton({
   onClick?: () => void;
   type?: "button" | "submit";
   target?: "_self" | "_blank";
+  size?: "default" | "sm";
 }) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-[0.22em] transition duration-300 font-button",
+    "inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-[0.18em] transition duration-300 font-button",
+    size === "sm" 
+      ? "px-4 py-2 text-xs" 
+      : "px-5 py-2.5 text-xs",
     tone === "gold"
-      ? "bg-[#C9A227] text-[#13482A] shadow-[0_18px_40px_rgba(201,162,39,0.28)] hover:-translate-y-0.5 hover:shadow-[0_24px_55px_rgba(201,162,39,0.36)]"
-      : "bg-[#13482A] text-white border border-white/25 hover:bg-[#1E6B3A] hover:border-[#C9A227]/40"
+      ? "bg-[#C9A227] text-[#13482A] shadow-[0_12px_30px_rgba(201,162,39,0.25)] hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(201,162,39,0.35)]"
+      : "bg-[#13482A] text-white border border-white/30 hover:bg-[#1E6B3A] hover:border-[#C9A227]/50"
   );
 
   if (href) {
     return (
       <a className={classes} href={href} onClick={onClick} target={target} rel={target === "_blank" ? "noopener noreferrer" : undefined}>
         <span>{label}</span>
-        <span aria-hidden="true">→</span>
+        <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
       </a>
     );
   }
@@ -289,15 +220,9 @@ function SectionHeading({
         visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
       }}
     >
-      <motion.p className="section-kicker" variants={fadeUp}>
-        {eyebrow}
-      </motion.p>
-      <motion.h2 className="max-w-4xl font-display text-4xl leading-tight text-white md:text-5xl lg:text-6xl" variants={fadeUp}>
-        {title}
-      </motion.h2>
-      <motion.p className="max-w-3xl text-base leading-8 text-white/72 md:text-lg" variants={fadeUp}>
-        {description}
-      </motion.p>
+      <motion.p className="section-kicker" variants={fadeUp}>{eyebrow}</motion.p>
+      <motion.h2 className="max-w-4xl font-display text-4xl leading-tight text-white md:text-5xl lg:text-6xl" variants={fadeUp}>{title}</motion.h2>
+      <motion.p className="max-w-3xl text-base leading-8 text-white/72 md:text-lg" variants={fadeUp}>{description}</motion.p>
     </motion.div>
   );
 }
@@ -308,17 +233,12 @@ function GlassPanel({ children, className }: { children: ReactNode; className?: 
 
 function Icon({ name }: { name: string }) {
   const common = "h-6 w-6";
-
   switch (name) {
     case "precision":
       return (
         <svg className={common} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-          <path d="M12 3v3" />
-          <path d="M12 18v3" />
-          <path d="M3 12h3" />
-          <path d="M18 12h3" />
-          <circle cx="12" cy="12" r="4.5" />
-          <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+          <path d="M12 3v3" /><path d="M12 18v3" /><path d="M3 12h3" /><path d="M18 12h3" />
+          <circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
         </svg>
       );
     case "leaf":
@@ -331,36 +251,23 @@ function Icon({ name }: { name: string }) {
     case "chart":
       return (
         <svg className={common} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-          <path d="M4 19h16" />
-          <path d="M6 16V9" />
-          <path d="M12 16V5" />
-          <path d="M18 16v-7" />
+          <path d="M4 19h16" /><path d="M6 16V9" /><path d="M12 16V5" /><path d="M18 16v-7" />
         </svg>
       );
     case "tractor":
       return (
         <svg className={common} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M6 14h8l2-4h4" />
-          <path d="M7 14v3" />
-          <circle cx="8" cy="18" r="2.5" />
-          <circle cx="18" cy="18" r="2.5" />
-          <path d="M13 10V7l-2-2" />
+          <path d="M6 14h8l2-4h4" /><path d="M7 14v3" /><circle cx="8" cy="18" r="2.5" /><circle cx="18" cy="18" r="2.5" /><path d="M13 10V7l-2-2" />
         </svg>
       );
     case "science":
       return (
         <svg className={common} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M10 3h4" />
-          <path d="M12 3v6l5 8a2 2 0 0 1-1.7 3H8.7A2 2 0 0 1 7 17l5-8V3" />
-          <path d="M8.5 14h7" />
+          <path d="M10 3h4" /><path d="M12 3v6l5 8a2 2 0 0 1-1.7 3H8.7A2 2 0 0 1 7 17l5-8V3" /><path d="M8.5 14h7" />
         </svg>
       );
     default:
-      return (
-        <svg className={common} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-          <circle cx="12" cy="12" r="9" />
-        </svg>
-      );
+      return (<svg className={common} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="9" /></svg>);
   }
 }
 
@@ -371,17 +278,12 @@ export default function App() {
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
   const [formState, setFormState] = useState({
-    nome: "",
-    telefone: "",
-    cidade: "",
-    email: "",
-    area: "",
-    mensagem: "",
+    nome: "", telefone: "", cidade: "", email: "", area: "", mensagem: "",
   });
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const prefersReducedMotion = useReducedMotion();
   const heroRef = useRef<HTMLElement | null>(null);
-  const galleryIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const galleryIntervalRef = useRef<number | null>(null);
 
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const videoY = useTransform(scrollYProgress, [0, 1], [0, 90]);
@@ -397,13 +299,11 @@ export default function App() {
 
   useEffect(() => {
     if (prefersReducedMotion) return;
-    galleryIntervalRef.current = setInterval(() => {
+    galleryIntervalRef.current = window.setInterval(() => {
       setCurrentGalleryIndex((prev) => (prev + 1) % galleryItems.length);
     }, 4000);
     return () => {
-      if (galleryIntervalRef.current) {
-        clearInterval(galleryIntervalRef.current);
-      }
+      if (galleryIntervalRef.current) clearInterval(galleryIntervalRef.current);
     };
   }, [prefersReducedMotion]);
 
@@ -434,13 +334,8 @@ export default function App() {
     Object.entries(formState).forEach(([key, value]) => payload.append(key, value));
 
     try {
-      const response = await fetch("/contact.php", {
-        method: "POST",
-        body: payload,
-      });
-
+      const response = await fetch("/contact.php", { method: "POST", body: payload });
       if (!response.ok) throw new Error("request-failed");
-
       setFormStatus("success");
       setFormState({ nome: "", telefone: "", cidade: "", email: "", area: "", mensagem: "" });
     } catch {
@@ -452,9 +347,7 @@ export default function App() {
           formState.cidade ? `Cidade: ${formState.cidade}` : null,
           formState.area ? `Área cultivada: ${formState.area}` : null,
           formState.mensagem ? `Mensagem: ${formState.mensagem}` : null,
-        ]
-          .filter(Boolean)
-          .join("\n"),
+        ].filter(Boolean).join("\n")
       );
       window.open(`https://wa.me/${whatsappNumber}?text=${fallbackText}`, "_blank", "noopener,noreferrer");
     } finally {
@@ -503,9 +396,9 @@ export default function App() {
                 )}
               </div>
             ))}
-            <div className="flex items-center gap-3">
-              <ArrowButton label="Diagnóstico" href="#contato" tone="gold" />
-              <ArrowButton label="Especialista" href={whatsappUrl} tone="dark" target="_blank" />
+            <div className="flex items-center gap-2">
+              <ArrowButton label="Diagnóstico" href="#contato" tone="gold" size="sm" />
+              <ArrowButton label="Especialista" href={whatsappUrl} tone="dark" target="_blank" size="sm" />
             </div>
           </nav>
 
@@ -599,9 +492,9 @@ export default function App() {
                 Na TECNOAGRO, cada hectare recebe uma estratégia personalizada para produzir mais, gastar menos e valorizar o patrimônio da sua propriedade.
               </motion.p>
 
-              <motion.div className="flex flex-col gap-4 sm:flex-row" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.85 }}>
-                <ArrowButton label="Solicitar Diagnóstico" href="#contato" tone="gold" />
-                <ArrowButton label="Fale com Especialista" href={whatsappUrl} tone="dark" target="_blank" />
+              <motion.div className="flex flex-col gap-3 sm:flex-row" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.85 }}>
+                <ArrowButton label="Diagnóstico" href="#contato" tone="gold" />
+                <ArrowButton label="Especialista" href={whatsappUrl} tone="dark" target="_blank" />
               </motion.div>
             </div>
           </motion.div>
@@ -629,12 +522,6 @@ export default function App() {
                 </motion.div>
               ))}
             </div>
-
-            <motion.div className="mt-8 text-center" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }}>
-              <div className="inline-block px-6 py-3 rounded-full border border-[#C9A227]/30 bg-[#C9A227]/10">
-                <p className="text-sm tracking-[0.15em] text-[#C9A227] font-medium">⚡ O que você faria se soubesse que pode transformar sua propriedade em um patrimônio 3x mais valioso?</p>
-              </div>
-            </motion.div>
           </div>
         </section>
 
@@ -657,7 +544,7 @@ export default function App() {
                 { title: "Missão", icon: "leaf", text: "Ativar o máximo potencial da terra por meio de precisão, gestão baseada em dados e manejo integrado." },
                 { title: "Visão", icon: "chart", text: "Ser a consultoria mais eficiente e inspiradora do agro nacional, referência em produtividade e valor patrimonial." },
                 { title: "Valores", icon: "science", text: "Rigor técnico, transparência, inovação, sustentabilidade, parceria genuína e resultados tangíveis." },
-              ].map((item, index) => (
+              ].map((item) => (
                 <motion.div key={item.title} className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#1E6B3A]/20 to-[#C9A227]/10 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#C9A227]/30" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp}>
                   <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#C9A227]/5 blur-3xl transition duration-700 group-hover:bg-[#C9A227]/15" />
                   <div className="relative">
@@ -861,56 +748,80 @@ export default function App() {
                 <p className="text-xs tracking-[0.38em] text-[#C9A227] uppercase">Sua próxima safra começa aqui</p>
                 <h2 className="mt-5 font-display text-4xl leading-tight text-white md:text-6xl">Sua fazenda pode produzir muito mais.</h2>
                 <p className="mt-5 text-lg leading-8 text-white/80">Vamos conversar e transformar inteligência em produtividade, rentabilidade e legado.</p>
-                <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-                  <ArrowButton label="Quero um Diagnóstico" href="#contato" tone="gold" />
-                  <ArrowButton label="Fale com Especialista" href={whatsappUrl} tone="dark" target="_blank" />
+                <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+                  <ArrowButton label="Diagnóstico" href="#contato" tone="gold" />
+                  <ArrowButton label="Especialista" href={whatsappUrl} tone="dark" target="_blank" />
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Contato */}
+        {/* Contato Reformulado */}
         <section id="contato" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading eyebrow="Contato" title="O primeiro passo para transformar sua propriedade" description="Preencha o formulário ou fale diretamente conosco. Cada minuto sem ação é uma oportunidade perdida de valorização." center />
+            <SectionHeading 
+              eyebrow="Contato" 
+              title="O momento de agir é agora" 
+              description="Enquanto você pensa, outro produtor já está colhendo resultados. Cada decisão adiada é uma oportunidade que passa. Vamos construir juntos o próximo capítulo da sua história no campo." 
+              center 
+            />
             <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_1fr]">
               <GlassPanel className="p-8 lg:p-10 flex flex-col justify-between">
                 <div>
-                  <p className="text-xs tracking-[0.36em] text-[#C9A227] uppercase">Por que esperar?</p>
-                  <h3 className="mt-4 font-display text-3xl text-white">O produtor que vence não espera o momento certo. Ele cria.</h3>
-                  <div className="mt-8 space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="mt-1 text-2xl">⏳</div>
-                      <div><p className="font-semibold text-white">Enquanto você decide, outros avançam</p><p className="text-sm text-white/65">A diferença entre o produtor que prospera e o que apenas sobrevive está na velocidade da decisão.</p></div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="mt-1 text-2xl">💰</div>
-                      <div><p className="font-semibold text-white">Cada hectare pode render 30% mais</p><p className="text-sm text-white/65">O que você faria se soubesse que pode transformar sua propriedade em um patrimônio 3x mais valioso?</p></div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="mt-1 text-2xl">🤝</div>
-                      <div><p className="font-semibold text-white">Você não precisa fazer isso sozinho</p><p className="text-sm text-white/65">Nossos especialistas estão prontos para construir junto com você o futuro da sua fazenda.</p></div>
-                    </div>
-                  </div>
-                  <div className="mt-8 p-5 rounded-2xl border border-[#C9A227]/30 bg-[#C9A227]/10">
-                    <p className="text-sm tracking-[0.15em] text-[#C9A227] text-center font-medium">⚡ O que você faria se pudesse multiplicar o valor da sua terra em 5 anos?</p>
-                  </div>
-                </div>
-                <div className="mt-8 pt-8 border-t border-white/10">
-                  <p className="text-sm text-white/70 mb-4">Fale diretamente com um especialista:</p>
-                  <div className="flex flex-col gap-3">
-                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-6 py-4 text-white font-semibold transition hover:bg-[#1da851]">
-                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                      WhatsApp - Falar com Especialista
+                  <p className="text-xs tracking-[0.36em] text-[#C9A227] uppercase">Por que agora?</p>
+                  <h3 className="mt-4 font-display text-3xl text-white">O produtor que vence não espera o momento perfeito. Ele cria.</h3>
+                  
+                  <div className="mt-8 space-y-4">
+                    {/* Botões sofisticados com ícone + texto */}
+                    <a 
+                      href={whatsappUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 transition-all duration-300 hover:border-[#25D366]/40 hover:bg-[#25D366]/10 hover:-translate-y-0.5"
+                    >
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#25D366]/15 text-[#25D366] transition group-hover:bg-[#25D366]/25">
+                        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-display text-lg text-white">Falar com Especialista</p>
+                        <p className="text-xs text-white/60">Conversa direta e personalizada</p>
+                      </div>
+                      <svg className="h-5 w-5 text-white/40 transition group-hover:text-[#25D366] group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                     </a>
-                    <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 rounded-full bg-[#E4405F] px-6 py-4 text-white font-semibold transition hover:bg-[#d13a54]">
-                      <svg className="h-5 w-5" fill="white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                      Instagram @tecnoagro8
+
+                    <a 
+                      href={instagramUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 transition-all duration-300 hover:border-[#E4405F]/40 hover:bg-[#E4405F]/10 hover:-translate-y-0.5"
+                    >
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E4405F]/15 text-[#E4405F] transition group-hover:bg-[#E4405F]/25">
+                        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-display text-lg text-white">Acompanhe no Instagram</p>
+                        <p className="text-xs text-white/60">@tecnoagro8</p>
+                      </div>
+                      <svg className="h-5 w-5 text-white/40 transition group-hover:text-[#E4405F] group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                     </a>
-                    <a href={`mailto:${emailContato}`} className="flex items-center justify-center gap-3 rounded-full bg-[#13482A] border border-white/20 px-6 py-4 text-white font-semibold transition hover:bg-[#1E6B3A]">
-                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                      Email: {emailContato}
+
+                    <a 
+                      href={`mailto:${emailContato}`} 
+                      className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 transition-all duration-300 hover:border-[#C9A227]/40 hover:bg-[#C9A227]/10 hover:-translate-y-0.5"
+                    >
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#C9A227]/15 text-[#C9A227] transition group-hover:bg-[#C9A227]/25">
+                        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-display text-lg text-white">Envie um Email</p>
+                        <p className="text-xs text-white/60">{emailContato}</p>
+                      </div>
+                      <svg className="h-5 w-5 text-white/40 transition group-hover:text-[#C9A227] group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                     </a>
                   </div>
                 </div>
@@ -924,7 +835,7 @@ export default function App() {
                 <form className="mt-8 grid gap-4" onSubmit={submitContact}>
                   {[
                     { name: "nome", label: "Nome completo", type: "text", placeholder: "Seu nome" },
-                    { name: "telefone", label: "Telefone com WhatsApp", type: "tel", placeholder: "(00) 00000-0000" },
+                    { name: "telefone", label: "Telefone", type: "tel", placeholder: "(00) 00000-0000" },
                     { name: "cidade", label: "Cidade / Estado", type: "text", placeholder: "Cidade / Estado" },
                     { name: "email", label: "Email", type: "email", placeholder: "voce@empresa.com.br" },
                     { name: "area", label: "Área cultivada (ha)", type: "text", placeholder: "Ex.: 1.250" },
@@ -939,63 +850,60 @@ export default function App() {
                     <textarea className="premium-input min-h-36 resize-none" name="mensagem" placeholder="Conte um pouco sobre sua propriedade e o principal objetivo da consultoria." value={formState.mensagem} onChange={(event) => setFormState((current) => ({ ...current, mensagem: event.target.value }))} required />
                   </label>
                   <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
-                    <ArrowButton label={formStatus === "sending" ? "Enviando..." : "Solicitar Diagnóstico"} tone="gold" type="submit" />
-                    {formStatus === "success" && <p className="text-sm text-[#5CA66B]">✓ Mensagem enviada com sucesso!</p>}
-                    {formStatus === "error" && <p className="text-sm text-[#C9A227]">Redirecionando para WhatsApp...</p>}
+                    <ArrowButton label={formStatus === "sending" ? "Enviando..." : "Enviar"} tone="gold" type="submit" />
+                    {formStatus === "success" && <p className="text-sm text-[#5CA66B]">✓ Mensagem enviada!</p>}
+                    {formStatus === "error" && <p className="text-sm text-[#C9A227]">Redirecionando...</p>}
                   </div>
                 </form>
-                <div className="mt-6 p-4 rounded-xl border border-[#C9A227]/10 bg-[#C9A227]/5">
-                  <p className="text-xs text-center text-white/60">⚡ <span className="text-[#C9A227] font-medium">Primeiro diagnóstico gratuito</span> para as primeiras 10 propriedades</p>
-                </div>
               </GlassPanel>
             </div>
           </div>
         </section>
       </main>
 
-      {/* Rodapé */}
-      <footer className="border-t border-white/10 py-14" style={{ background: '#0f3520' }}>
+      {/* Rodapé Branco */}
+      <footer className="border-t border-gray-200 bg-white py-14">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1fr_0.8fr] lg:px-8">
           <div className="space-y-4">
             <div className="flex items-center">
-              <img src="/logo-verde.png" alt="TECNOAGRO" className="h-20 w-auto object-contain" onError={(e) => { e.currentTarget.src = "/logo.png"; }} />
+              <img src="/logo.png" alt="TECNOAGRO" className="h-20 w-auto object-contain" />
             </div>
-            <p className="max-w-sm text-sm leading-7 text-white/80">Uma consultoria premium em inteligência agronômica para propriedades que buscam produtividade, rentabilidade e legado.</p>
-            <p className="text-xs tracking-[0.3em] text-[#C9A227] uppercase">Cultivando inteligência. Colhendo resultados.</p>
+            <p className="max-w-sm text-sm leading-7 text-gray-700">Uma consultoria premium em inteligência agronômica para propriedades que buscam produtividade, rentabilidade e legado.</p>
+            <p className="text-xs tracking-[0.3em] text-[#1E6B3A] uppercase font-medium">Cultivando inteligência. Colhendo resultados.</p>
           </div>
 
           <div>
-            <p className="text-sm tracking-[0.28em] text-[#C9A227] uppercase">Menu</p>
+            <p className="text-sm tracking-[0.28em] text-[#1E6B3A] uppercase font-medium">Menu</p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {navLinks.map((link) => (
-                <a key={link.id} href={`#${link.id}`} className="text-sm text-white/80 transition hover:text-white">{link.label}</a>
+                <a key={link.id} href={`#${link.id}`} className="text-sm text-gray-700 transition hover:text-[#1E6B3A]">{link.label}</a>
               ))}
             </div>
           </div>
 
           <div>
-            <p className="text-sm tracking-[0.28em] text-[#C9A227] uppercase">Contato</p>
-            <div className="mt-4 space-y-3 text-sm text-white/80">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block transition hover:text-[#25D366]">WhatsApp: +55 61 99648-1878</a>
-              <a href={`mailto:${emailContato}`} className="block transition hover:text-white">Email: {emailContato}</a>
+            <p className="text-sm tracking-[0.28em] text-[#1E6B3A] uppercase font-medium">Contato</p>
+            <div className="mt-4 space-y-3 text-sm text-gray-700">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block transition hover:text-[#25D366]">Especialista: +55 61 99648-1878</a>
+              <a href={`mailto:${emailContato}`} className="block transition hover:text-[#1E6B3A]">Email: {emailContato}</a>
               <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="block transition hover:text-[#E4405F]">Instagram: @tecnoagro8</a>
             </div>
             <div className="mt-6 flex flex-wrap gap-4 text-sm">
-              <a className="text-white/60 transition hover:text-[#E4405F]" href={instagramUrl} target="_blank" rel="noreferrer">Instagram</a>
-              <a className="text-white/60 transition hover:text-[#1877F2]" href="https://facebook.com/tecnoagro" target="_blank" rel="noreferrer">Facebook</a>
-              <a className="text-white/60 transition hover:text-[#0A66C2]" href="https://linkedin.com/company/tecnoagro" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a className="text-gray-500 transition hover:text-[#E4405F]" href={instagramUrl} target="_blank" rel="noreferrer">Instagram</a>
+              <a className="text-gray-500 transition hover:text-[#1877F2]" href="https://facebook.com/tecnoagro" target="_blank" rel="noreferrer">Facebook</a>
+              <a className="text-gray-500 transition hover:text-[#0A66C2]" href="https://linkedin.com/company/tecnoagro" target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-white/8 px-4 pt-6 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+        <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-gray-200 px-4 pt-6 text-sm text-gray-500 sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>TECNOAGRO © 2026</p>
           <p>Estrutura preparada para Google Analytics, Meta Pixel e Google Ads.</p>
         </div>
       </footer>
 
-      {/* WhatsApp Flutuante */}
-      <a href={whatsappUrl} target="_blank" rel="noreferrer" className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_30px_rgba(37,211,102,0.4)] transition hover:scale-110 hover:shadow-[0_8px_40px_rgba(37,211,102,0.6)]" aria-label="Falar no WhatsApp">
+      {/* Botão Flutuante - Falar com Especialista */}
+      <a href={whatsappUrl} target="_blank" rel="noreferrer" className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_30px_rgba(37,211,102,0.4)] transition hover:scale-110 hover:shadow-[0_8px_40px_rgba(37,211,102,0.6)]" aria-label="Falar com Especialista">
         <span className="absolute inset-0 rounded-full bg-[#25D366]/40 animate-ping opacity-40" />
         <svg className="relative h-7 w-7" viewBox="0 0 24 24" fill="white">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
