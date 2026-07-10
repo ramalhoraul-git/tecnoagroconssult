@@ -26,10 +26,12 @@ type Testimonial = {
   photo: string;
 };
 
+// WhatsApp correto
 const whatsappNumber = "5561996481878";
 const whatsappMessage = "Olá, gostaria de agendar um diagnóstico da minha propriedade.";
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
+// Redes sociais
 const instagramUrl = "https://instagram.com/tecnoagro8";
 const emailContato = "contato@tecnoagro.com.br";
 
@@ -58,6 +60,7 @@ const navLinks: SectionLink[] = [
   { id: "contato", label: "Contato" },
 ];
 
+// Mensagens de valor com neuro-linguística
 const valueMessages = [
   { 
     icon: "🎯", 
@@ -81,6 +84,7 @@ const valueMessages = [
   },
 ];
 
+// Depoimentos
 const testimonials: Testimonial[] = [
   {
     quote: "Fechamos parceria em 2025 e já ganhamos na entre safra irrigada média de 6 sacas a mais do que o ano anterior. A TECNOAGRO transformou nossa forma de enxergar a produção.",
@@ -96,37 +100,128 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+// Fotos para o carrossel da galeria - IMAGENS DO PEXELS QUE FUNCIONAM
 const galleryItems: GalleryItem[] = [
-  { src: "/images/galeria/foto1.jpg", alt: "Vista aérea de lavouras", title: "Monitoramento com Drone" },
-  { src: "/images/galeria/foto2.jpg", alt: "Colheitadeira em campo", title: "Colheita de Alta Performance" },
-  { src: "/images/galeria/foto3.jpg", alt: "Máquinas modernas", title: "Tecnologia no Campo" },
-  { src: "/images/galeria/foto4.jpg", alt: "Drones agrícolas", title: "Agricultura de Precisão" },
-  { src: "/images/galeria/foto5.jpg", alt: "Tratores operando", title: "Plantio Estratégico" },
-  { src: "/images/galeria/foto6.jpg", alt: "Gestão de talhões", title: "Gestão Patrimonial" },
+  {
+    src: "https://images.pexels.com/photos/34940811/pexels-photo-34940811.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    alt: "Vista aérea de lavouras",
+    title: "Monitoramento com Drone",
+  },
+  {
+    src: "https://images.pexels.com/photos/26256446/pexels-photo-26256446.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    alt: "Colheitadeira em campo",
+    title: "Colheita de Alta Performance",
+  },
+  {
+    src: "https://images.pexels.com/photos/33787003/pexels-photo-33787003.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    alt: "Máquinas modernas",
+    title: "Tecnologia no Campo",
+  },
+  {
+    src: "https://images.pexels.com/photos/34182414/pexels-photo-34182414.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    alt: "Drones agrícolas",
+    title: "Agricultura de Precisão",
+  },
+  {
+    src: "https://images.pexels.com/photos/9276463/pexels-photo-9276463.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    alt: "Tratores operando",
+    title: "Plantio Estratégico",
+  },
+  {
+    src: "https://images.pexels.com/photos/31953698/pexels-photo-31953698.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200",
+    alt: "Gestão de talhões",
+    title: "Gestão Patrimonial",
+  },
 ];
 
 const strategicPillars = [
-  { title: "Decisão guiada por dados", text: "Transformamos mapas, análises e monitoramento em um plano claro para produzir mais, gastar menos e reduzir riscos." },
-  { title: "Gestão de rentabilidade", text: "Cada hectare é tratado como patrimônio produtivo, com foco em retorno, previsibilidade e eficiência operacional." },
-  { title: "Legado sustentável", text: "Unimos ciência e responsabilidade para fortalecer o solo, a operação e a sucessão das próximas gerações." },
+  {
+    title: "Decisão guiada por dados",
+    text: "Transformamos mapas, análises e monitoramento em um plano claro para produzir mais, gastar menos e reduzir riscos.",
+  },
+  {
+    title: "Gestão de rentabilidade",
+    text: "Cada hectare é tratado como patrimônio produtivo, com foco em retorno, previsibilidade e eficiência operacional.",
+  },
+  {
+    title: "Legado sustentável",
+    text: "Unimos ciência e responsabilidade para fortalecer o solo, a operação e a sucessão das próximas gerações.",
+  },
 ];
 
 const differentiators = [
-  { title: "Agricultura de Precisão", text: "Tecnologia aplicada para enxergar a lavoura em nível de detalhe e agir com mais assertividade." },
-  { title: "Inteligência Agronômica", text: "Leitura técnica do campo, do solo ao clima, com visão consultiva e orientada a resultado." },
-  { title: "Gestão de Rentabilidade", text: "Planejamento que melhora o uso de insumos, custos e eficiência para elevar a margem do produtor." },
-  { title: "Tecnologia no Campo", text: "Integração entre monitoramento, máquinas e dados para operar com mais precisão e menos desperdício." },
-  { title: "Ciência Aplicada", text: "Recomendações fundamentadas em análise, observação e método, sem achismos na tomada de decisão." },
-  { title: "Sustentabilidade", text: "Práticas que preservam produtividade, conservam recursos e valorizam a terra no longo prazo." },
+  {
+    title: "Agricultura de Precisão",
+    text: "Tecnologia aplicada para enxergar a lavoura em nível de detalhe e agir com mais assertividade.",
+  },
+  {
+    title: "Inteligência Agronômica",
+    text: "Leitura técnica do campo, do solo ao clima, com visão consultiva e orientada a resultado.",
+  },
+  {
+    title: "Gestão de Rentabilidade",
+    text: "Planejamento que melhora o uso de insumos, custos e eficiência para elevar a margem do produtor.",
+  },
+  {
+    title: "Tecnologia no Campo",
+    text: "Integração entre monitoramento, máquinas e dados para operar com mais precisão e menos desperdício.",
+  },
+  {
+    title: "Ciência Aplicada",
+    text: "Recomendações fundamentadas em análise, observação e método, sem achismos na tomada de decisão.",
+  },
+  {
+    title: "Sustentabilidade",
+    text: "Práticas que preservam produtividade, conservam recursos e valorizam a terra no longo prazo.",
+  },
 ];
 
 const serviceGroups: ServiceGroup[] = [
-  { title: "Estratégia e Gestão", items: ["Diagnóstico e Planejamento", "Projetos de Crédito Rural", "Seguro Agrícola", "Gestão Financeira", "Análise de Custos", "Planejamento Estratégico"] },
-  { title: "Campo e Manejo", items: ["Monitoramento de Lavouras", "Análise de Solo", "Calagem", "Adubação", "Manejo Integrado", "Controle Fitossanitário", "Rotação de Culturas", "Relatórios Técnicos"] },
-  { title: "Tecnologia e Precisão", items: ["Agricultura de Precisão", "Mapas de Fertilidade", "Taxa Variável", "Georreferenciamento", "Treinamentos", "Irrigação Inteligente", "Máquinas Agrícolas"] },
+  {
+    title: "Estratégia e Gestão",
+    items: [
+      "Diagnóstico e Planejamento",
+      "Projetos de Crédito Rural",
+      "Seguro Agrícola",
+      "Gestão Financeira",
+      "Análise de Custos",
+      "Planejamento Estratégico",
+    ],
+  },
+  {
+    title: "Campo e Manejo",
+    items: [
+      "Monitoramento de Lavouras",
+      "Análise de Solo",
+      "Calagem",
+      "Adubação",
+      "Manejo Integrado",
+      "Controle Fitossanitário",
+      "Rotação de Culturas",
+      "Relatórios Técnicos",
+    ],
+  },
+  {
+    title: "Tecnologia e Precisão",
+    items: [
+      "Agricultura de Precisão",
+      "Mapas de Fertilidade",
+      "Taxa Variável",
+      "Georreferenciamento",
+      "Treinamentos",
+      "Irrigação Inteligente",
+      "Máquinas Agrícolas",
+    ],
+  },
 ];
 
-const processSteps = ["Diagnóstico", "Planejamento", "Implantação", "Monitoramento", "Resultados"];
+const processSteps = [
+  "Diagnóstico",
+  "Planejamento",
+  "Implantação",
+  "Monitoramento",
+  "Resultados",
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -543,7 +638,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* Quem Somos - Ultra Premium */}
+        {/* Quem Somos */}
         <section id="quem-somos" className="py-28 md:py-36 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -670,7 +765,7 @@ export default function App() {
             <div className="mt-12 relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5">
               <div className="relative aspect-[16/9] overflow-hidden">
                 <AnimatePresence mode="wait">
-                  <motion.img key={currentGalleryIndex} src={galleryItems[currentGalleryIndex].src} alt={galleryItems[currentGalleryIndex].alt} className="h-full w-full object-cover" initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.05 }} transition={{ duration: 0.8 }} onError={(e) => { e.currentTarget.src = "https://images.pexels.com/photos/34940811/pexels-photo-34940811.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200"; }} />
+                  <motion.img key={currentGalleryIndex} src={galleryItems[currentGalleryIndex].src} alt={galleryItems[currentGalleryIndex].alt} className="h-full w-full object-cover" initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.05 }} transition={{ duration: 0.8 }} />
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f3520]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8">
