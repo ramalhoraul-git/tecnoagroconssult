@@ -52,7 +52,7 @@ const navLinks: SectionLink[] = [
     ]
   },
   { id: "galeria", label: "Galeria" },
-  { id: "resultados", label: "Resultados" },
+  { id: "resultados", label: "Depoimentos" },
   { id: "contato", label: "Contato" },
 ];
 
@@ -80,7 +80,7 @@ const valueMessages = [
   },
 ];
 
-// Depoimento real
+// Depoimentos
 const testimonials: Testimonial[] = [
   {
     quote: "Fechamos parceria em 2025 e já ganhamos na entre safra irrigada média de 6 sacas a mais do que o ano anterior. A TECNOAGRO transformou nossa forma de enxergar a produção.",
@@ -88,9 +88,15 @@ const testimonials: Testimonial[] = [
     role: "Produtor rural, Cristalina/GO",
     photo: "https://images.pexels.com/photos/5484072/pexels-photo-5484072.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=900",
   },
+  {
+    quote: "Abrimos a mente para novas tecnologias e ganhamos mais eficiência no plantio, menos custo e uma parceria que segue para os próximos anos.",
+    author: "Rafael Shimitashu",
+    role: "Produtor rural, Cristalina/GO",
+    photo: "https://images.pexels.com/photos/5484072/pexels-photo-5484072.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=900",
+  },
 ];
 
-// Fotos para o carrossel da galeria - AGORA USANDO IMAGENS LOCAIS
+// Fotos para o carrossel da galeria
 const galleryItems: GalleryItem[] = [
   {
     src: "/images/galeria/foto1.jpg",
@@ -237,7 +243,7 @@ function ArrowButton({
     "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-[0.22em] transition duration-300 font-button",
     tone === "gold"
       ? "bg-[#C9A227] text-[#13482A] shadow-[0_18px_40px_rgba(201,162,39,0.28)] hover:-translate-y-0.5 hover:shadow-[0_24px_55px_rgba(201,162,39,0.36)]"
-      : "border border-white/15 bg-white/6 text-white hover:-translate-y-0.5 hover:border-[#C9A227]/50 hover:bg-white/10",
+      : "border border-white/15 bg-white/10 text-white hover:-translate-y-0.5 hover:border-[#C9A227]/50 hover:bg-white/20",
   );
 
   if (href) {
@@ -464,12 +470,12 @@ export default function App() {
           ? "border-[#1E6B3A]/10 bg-white/95 backdrop-blur-xl shadow-[0_18px_60px_rgba(0,0,0,0.08)]" 
           : "border-transparent bg-white"
       )}>
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-          <a href="#home" className="flex items-center gap-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+          <a href="#home" className="flex items-center">
             <img 
               src="/logo.png" 
               alt="TECNOAGRO" 
-              className="h-16 w-auto object-contain"
+              className="h-20 w-auto object-contain" // Logo maior
             />
           </a>
 
@@ -668,7 +674,7 @@ export default function App() {
           <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0f3520] to-transparent" />
         </section>
 
-        {/* Seção de Mensagens de Valor - CORRIGIDA (fundo escuro) */}
+        {/* Seção de Mensagens de Valor */}
         <section className="border-y border-white/8 bg-[#0f3520] py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -676,7 +682,7 @@ export default function App() {
               <h2 className="mt-4 font-display text-3xl text-white md:text-4xl">
                 A diferença entre <span className="text-[#C9A227]">produzir</span> e <span className="text-[#C9A227]">protagonizar</span>
               </h2>
-              <p className="mt-3 text-white/60 max-w-2xl mx-auto">
+              <p className="mt-3 text-white/70 max-w-2xl mx-auto">
                 Enquanto outros apenas colhem, você constrói um legado. Cada decisão se torna um ativo.
               </p>
             </div>
@@ -693,7 +699,7 @@ export default function App() {
                 >
                   <div className="text-4xl mb-4">{item.icon}</div>
                   <h3 className="font-display text-xl text-white">{item.title}</h3>
-                  <p className="mt-3 text-sm text-white/65 leading-relaxed">{item.description}</p>
+                  <p className="mt-3 text-sm text-white/80 leading-relaxed">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -706,73 +712,71 @@ export default function App() {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              <p className="text-[10px] tracking-[0.5em] text-[#C9A227]/30 uppercase select-none">
+              <p className="text-[10px] tracking-[0.5em] text-[#C9A227]/40 uppercase select-none">
                 · O que você faria se soubesse que pode transformar sua propriedade em um patrimônio 3x mais valioso? ·
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Quem Somos */}
-        <section id="quem-somos" className="py-24 md:py-32 bg-[#13482A]">
-          <div className="mx-auto grid max-w-7xl gap-16 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8">
-            <motion.div
-              className="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-4 backdrop-blur-xl"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.35 }}
-              variants={fadeUp}
-            >
-              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(201,162,39,0.16),transparent_40%,rgba(255,255,255,0.08)_100%)]" />
-              <img
-                className="relative h-[34rem] w-full rounded-[28px] object-cover object-center"
-                src="https://images.pexels.com/photos/5484072/pexels-photo-5484072.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1600&w=1200"
-                alt="Consultor do agronegócio em ambiente rural"
-              />
-            </motion.div>
+        {/* Quem Somos - Layout Ultra Premium */}
+        <section id="quem-somos" className="py-28 md:py-36 bg-[#13482A]">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <p className="text-xs tracking-[0.36em] text-[#C9A227] uppercase">Quem Somos</p>
+              <h2 className="mt-4 font-display text-4xl text-white md:text-5xl lg:text-6xl">
+                Parceiros estratégicos na <br />
+                <span className="text-[#C9A227]">evolução do seu agronegócio</span>
+              </h2>
+              <p className="mt-6 max-w-3xl mx-auto text-white/70 text-lg leading-8">
+                Cada propriedade possui uma história. Nosso papel é transformar essa história em produtividade, 
+                rentabilidade e legado com rigor técnico, visão de futuro e presença constante ao lado do produtor.
+              </p>
+            </div>
 
-            <div className="space-y-10">
-              <SectionHeading
-                eyebrow="Quem Somos"
-                title="Não somos apenas consultores. Somos parceiros estratégicos na evolução do seu agronegócio."
-                description="Cada propriedade possui uma história. Nosso papel é transformar essa história em produtividade, rentabilidade e legado com rigor técnico, visão de futuro e presença constante ao lado do produtor."
-              />
-
-              <div className="grid gap-4 md:grid-cols-3">
-                {[
-                  {
-                    title: "Missão",
-                    icon: "leaf",
-                    text: "Ativar o máximo potencial da terra por meio de precisão, gestão baseada em dados e manejo integrado.",
-                  },
-                  {
-                    title: "Visão",
-                    icon: "chart",
-                    text: "Ser a consultoria mais eficiente e inspiradora do agro nacional, referência em produtividade e valor patrimonial.",
-                  },
-                  {
-                    title: "Valores",
-                    icon: "science",
-                    text: "Rigor técnico, transparência, inovação, sustentabilidade, parceria genuína e resultados tangíveis.",
-                  },
-                ].map((item) => (
-                  <motion.div
-                    key={item.title}
-                    className="glass-panel p-6"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.35 }}
-                    variants={fadeUp}
-                    whileHover={{ y: -6 }}
-                  >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#C9A227]/25 bg-[#C9A227]/12 text-[#C9A227]">
+            <div className="grid gap-6 lg:grid-cols-3">
+              {[
+                {
+                  title: "Missão",
+                  icon: "leaf",
+                  text: "Ativar o máximo potencial da terra por meio de precisão, gestão baseada em dados e manejo integrado.",
+                  gradient: "from-[#1E6B3A]/20 to-[#C9A227]/10"
+                },
+                {
+                  title: "Visão",
+                  icon: "chart",
+                  text: "Ser a consultoria mais eficiente e inspiradora do agro nacional, referência em produtividade e valor patrimonial.",
+                  gradient: "from-[#C9A227]/20 to-[#1E6B3A]/10"
+                },
+                {
+                  title: "Valores",
+                  icon: "science",
+                  text: "Rigor técnico, transparência, inovação, sustentabilidade, parceria genuína e resultados tangíveis.",
+                  gradient: "from-[#1E6B3A]/20 to-[#C9A227]/10"
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#C9A227]/30"
+                  style={{ background: `linear-gradient(135deg, rgba(30,107,58,0.15) 0%, rgba(201,162,39,0.08) 100%)` }}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={fadeUp}
+                >
+                  {/* Efeito de brilho */}
+                  <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#C9A227]/5 blur-3xl transition duration-700 group-hover:bg-[#C9A227]/15" />
+                  
+                  <div className="relative">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#C9A227]/25 bg-[#C9A227]/10 text-[#C9A227] transition group-hover:scale-110 group-hover:bg-[#C9A227]/20">
                       <Icon name={item.icon} />
                     </div>
-                    <h3 className="mt-6 font-display text-2xl text-white">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-white/72">{item.text}</p>
-                  </motion.div>
-                ))}
-              </div>
+                    <h3 className="mt-6 font-display text-3xl text-white">{item.title}</h3>
+                    <div className="mt-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#C9A227] to-transparent" />
+                    <p className="mt-5 text-base leading-7 text-white/75">{item.text}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -953,7 +957,6 @@ export default function App() {
                     exit={{ opacity: 0, scale: 1.05 }}
                     transition={{ duration: 0.8 }}
                     onError={(e) => {
-                      // Fallback para imagem placeholder se a imagem local não existir
                       e.currentTarget.src = "https://images.pexels.com/photos/34940811/pexels-photo-34940811.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200";
                     }}
                   />
@@ -965,7 +968,6 @@ export default function App() {
                   <h3 className="mt-2 font-display text-3xl text-white">{galleryItems[currentGalleryIndex].title}</h3>
                 </div>
 
-                {/* Botões de navegação do carrossel */}
                 <button
                   onClick={() => setCurrentGalleryIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length)}
                   className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-black/40 p-3 text-white backdrop-blur-md transition hover:bg-black/60"
@@ -986,7 +988,6 @@ export default function App() {
                 </button>
               </div>
 
-              {/* Indicadores do carrossel */}
               <div className="flex justify-center gap-2 p-4 bg-black/20">
                 {galleryItems.map((_, index) => (
                   <button
@@ -1042,53 +1043,8 @@ export default function App() {
           </div>
         </section>
 
-        {/* Resultados */}
-        <section id="resultados" className="py-24 md:py-32 bg-[#13482A]">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              eyebrow="Resultados"
-              title="O impacto da consultoria em números"
-              description="Performance, eficiência e ganho patrimonial caminhando juntos em uma operação mais previsível e resiliente."
-              center
-            />
-
-            <div className="mt-14 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
-              <GlassPanel className="p-8 lg:p-10">
-                <div className="grid gap-4 md:grid-cols-2">
-                  {[
-                    { value: "+500", label: "Produtores atendidos" },
-                    { value: "+100 mil", label: "hectares sob gestão" },
-                    { value: "+20", label: "anos de experiência" },
-                    { value: "Milhões", label: "em valorização patrimonial" },
-                  ].map((item) => (
-                    <div key={item.label} className="rounded-[28px] border border-white/8 bg-white/4 p-6">
-                      <div className="font-display text-4xl text-white md:text-5xl">{item.value}</div>
-                      <p className="mt-2 text-sm tracking-[0.18em] text-white/60 uppercase">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </GlassPanel>
-
-              <GlassPanel className="flex flex-col justify-between p-8 lg:p-10">
-                <p className="text-sm tracking-[0.32em] text-[#C9A227] uppercase">Destaque de campo</p>
-                <div className="mt-8 space-y-6">
-                  <p className="font-display text-3xl leading-tight text-white md:text-4xl">
-                    "Fechamos parceria em 2025 e já ganhamos na entre safra irrigada média de 6 sacas a mais do que o ano anterior."
-                  </p>
-                  <p className="text-sm leading-7 text-white/72">
-                    Rafael Shimitashu, produtor rural de Cristalina, GO, sobre o atendimento exclusivo da TECNOAGRO.
-                  </p>
-                </div>
-                <div className="mt-10 rounded-[28px] border border-[#C9A227]/20 bg-[#C9A227]/10 p-5 text-sm leading-7 text-white/78">
-                  Mais eficiência no plantio, menos custo e acompanhamento lado a lado desde a regulagem até a colheita.
-                </div>
-              </GlassPanel>
-            </div>
-          </div>
-        </section>
-
-        {/* Depoimentos */}
-        <section id="depoimentos" className="py-24 md:py-32 bg-[#13482A]">
+        {/* Depoimentos (sem estatísticas) */}
+        <section id="resultados" className="py-28 md:py-36 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Depoimentos"
@@ -1188,7 +1144,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* Contato com Neuro-linguística - sem mapa e sem SMTP Ready */}
+        {/* Contato com Neuro-linguística */}
         <section id="contato" className="py-24 md:py-32 bg-[#13482A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
@@ -1199,7 +1155,7 @@ export default function App() {
             />
 
             <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_1fr]">
-              {/* Lado esquerdo - Neuro-linguística forçando contato */}
+              {/* Lado esquerdo - Neuro-linguística */}
               <GlassPanel className="p-8 lg:p-10 flex flex-col justify-between">
                 <div>
                   <p className="text-xs tracking-[0.36em] text-[#C9A227] uppercase">Por que esperar?</p>
@@ -1229,53 +1185,53 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Mensagem oculta com neuro-linguística */}
-                  <div className="mt-8 p-4 rounded-2xl border border-[#C9A227]/20 bg-[#C9A227]/5">
-                    <p className="text-xs tracking-[0.3em] text-[#C9A227]/40 text-center select-none">
-                      · O que você faria se pudesse multiplicar o valor da sua terra em 5 anos? ·
+                  {/* Mensagem com neuro-linguística - MAIS VISÍVEL */}
+                  <div className="mt-8 p-5 rounded-2xl border border-[#C9A227]/30 bg-[#C9A227]/10">
+                    <p className="text-sm tracking-[0.2em] text-[#C9A227] text-center font-medium">
+                      ⚡ O que você faria se pudesse multiplicar o valor da sua terra em 5 anos?
                     </p>
                   </div>
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-white/10">
-                  <p className="text-sm text-white/60 mb-4">Fale diretamente com um especialista:</p>
-                  <div className="flex flex-wrap gap-4">
+                  <p className="text-sm text-white/70 mb-4">Fale diretamente com um especialista:</p>
+                  <div className="flex flex-col gap-3">
                     <a 
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 rounded-full bg-[#25D366] px-6 py-3 text-white font-semibold transition hover:bg-[#1da851]"
+                      className="flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-6 py-4 text-white font-semibold transition hover:bg-[#1da851]"
                     >
                       <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                       </svg>
-                      WhatsApp
+                      Falar com Especialista no WhatsApp
                     </a>
                     <a 
                       href="https://instagram.com/tecnoagro"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 rounded-full bg-[#E4405F] px-6 py-3 text-white font-semibold transition hover:bg-[#d13a54]"
+                      className="flex items-center justify-center gap-3 rounded-full bg-[#E4405F] px-6 py-4 text-white font-semibold transition hover:bg-[#d13a54]"
                     >
                       <svg className="h-5 w-5" fill="white" viewBox="0 0 24 24">
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                       </svg>
-                      Instagram
+                      Siga no Instagram
                     </a>
                     <a 
                       href="mailto:contato@tecnoagro.com.br"
-                      className="flex items-center gap-3 rounded-full bg-[#13482A] border border-white/20 px-6 py-3 text-white font-semibold transition hover:bg-[#1E6B3A]"
+                      className="flex items-center justify-center gap-3 rounded-full bg-[#13482A] border border-white/20 px-6 py-4 text-white font-semibold transition hover:bg-[#1E6B3A]"
                     >
                       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
-                      Email
+                      Enviar Email
                     </a>
                   </div>
                 </div>
               </GlassPanel>
 
-              {/* Lado direito - Formulário (sem SMTP Ready) */}
+              {/* Lado direito - Formulário */}
               <GlassPanel className="p-6 sm:p-8 lg:p-10">
                 <div>
                   <p className="text-sm tracking-[0.28em] text-[#C9A227] uppercase">Formulário</p>
@@ -1330,10 +1286,9 @@ export default function App() {
                   </div>
                 </form>
 
-                {/* Mensagem adicional de urgência */}
                 <div className="mt-6 p-4 rounded-xl border border-[#C9A227]/10 bg-[#C9A227]/5">
-                  <p className="text-xs text-center text-white/50">
-                    ⚡ <span className="text-[#C9A227]">Primeiro diagnóstico gratuito</span> para as primeiras 10 propriedades
+                  <p className="text-xs text-center text-white/60">
+                    ⚡ <span className="text-[#C9A227] font-medium">Primeiro diagnóstico gratuito</span> para as primeiras 10 propriedades
                   </p>
                 </div>
               </GlassPanel>
@@ -1342,18 +1297,21 @@ export default function App() {
         </section>
       </main>
 
-      {/* Rodapé com fundo combinando com a logo verde */}
+      {/* Rodapé */}
       <footer className="border-t border-white/10 py-14" style={{ background: '#0f3520' }}>
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1fr_0.8fr] lg:px-8">
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center">
               <img 
                 src="/logo-verde.png" 
                 alt="TECNOAGRO" 
                 className="h-20 w-auto object-contain"
+                onError={(e) => {
+                  e.currentTarget.src = "/logo.png";
+                }}
               />
             </div>
-            <p className="max-w-sm text-sm leading-7 text-white/68">
+            <p className="max-w-sm text-sm leading-7 text-white/70">
               Uma consultoria premium em inteligência agronômica para propriedades que buscam produtividade, rentabilidade e legado.
             </p>
             <p className="text-xs tracking-[0.3em] text-[#C9A227] uppercase">
@@ -1365,7 +1323,7 @@ export default function App() {
             <p className="text-sm tracking-[0.28em] text-[#C9A227] uppercase">Menu</p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {navLinks.map((link) => (
-                <a key={link.id} href={`#${link.id}`} className="text-sm text-white/68 transition hover:text-white">
+                <a key={link.id} href={`#${link.id}`} className="text-sm text-white/70 transition hover:text-white">
                   {link.label}
                 </a>
               ))}
@@ -1374,7 +1332,7 @@ export default function App() {
 
           <div>
             <p className="text-sm tracking-[0.28em] text-[#C9A227] uppercase">Contato</p>
-            <div className="mt-4 space-y-3 text-sm text-white/68">
+            <div className="mt-4 space-y-3 text-sm text-white/70">
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block transition hover:text-[#25D366]">
                 WhatsApp: +55 61 99648-1878
               </a>
@@ -1382,27 +1340,27 @@ export default function App() {
                 Email: contato@tecnoagro.com.br
               </a>
             </div>
-            <div className="mt-6 flex flex-wrap gap-3 text-sm text-white/65">
-              <a className="transition hover:text-[#E4405F]" href="https://instagram.com/tecnoagro" target="_blank" rel="noreferrer">
+            <div className="mt-6 flex flex-wrap gap-4 text-sm">
+              <a className="text-white/60 transition hover:text-[#E4405F]" href="https://instagram.com/tecnoagro" target="_blank" rel="noreferrer">
                 Instagram
               </a>
-              <a className="transition hover:text-[#1877F2]" href="https://facebook.com/tecnoagro" target="_blank" rel="noreferrer">
+              <a className="text-white/60 transition hover:text-[#1877F2]" href="https://facebook.com/tecnoagro" target="_blank" rel="noreferrer">
                 Facebook
               </a>
-              <a className="transition hover:text-[#0A66C2]" href="https://linkedin.com/company/tecnoagro" target="_blank" rel="noreferrer">
+              <a className="text-white/60 transition hover:text-[#0A66C2]" href="https://linkedin.com/company/tecnoagro" target="_blank" rel="noreferrer">
                 LinkedIn
               </a>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-white/8 px-4 pt-6 text-sm text-white/52 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+        <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-white/8 px-4 pt-6 text-sm text-white/40 sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>TECNOAGRO © 2026</p>
           <p>Estrutura preparada para Google Analytics, Meta Pixel e Google Ads.</p>
         </div>
       </footer>
 
-      {/* WhatsApp Flutuante - CORES PADRÃO WHATSAPP */}
+      {/* WhatsApp Flutuante */}
       <a
         href={whatsappUrl}
         target="_blank"
